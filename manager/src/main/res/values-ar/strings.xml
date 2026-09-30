@@ -253,6 +253,8 @@
     <string name="notification_watchdog_text"><![CDATA[توقفت خدمة Shevery بشكل غير متوقع.]]></string>
     <string name="watchdog_service_title"><![CDATA[مراقب Shevery نشط]]></string>
     <string name="watchdog_service_text"><![CDATA[جاري مراقبة خدمة Shevery للتعافي]]></string>
+    <string name="watchdog_action_turn_off"><![CDATA[إيقاف التشغيل]]></string>
+    <string name="watchdog_action_channel_settings"><![CDATA[إيقاف التنبيهات]]></string>
     <string name="notification_control_channel_name"><![CDATA[التحكم في Shevery]]></string>
     <string name="notification_control_title_running"><![CDATA[Shevery قيد التشغيل]]></string>
     <string name="notification_control_title_stopped"><![CDATA[Shevery متوقف]]></string>
@@ -416,7 +418,7 @@
     <string name="diagnostics_limited"><![CDATA[محدود]]></string>
     <string name="diagnostics_unknown"><![CDATA[غير معروف]]></string>
     <string name="error_protect_title"><![CDATA[خطأ حماية]]></string>
-    <string name="error_protect_summary"><![CDATA[فحص صحة العملية والأخطاء كل 10 ثوانٍ. إيقاف Shevery وإعادة تشغيله تلقائيًا إذا وُجدت مشكلات.]]></string>
+    <string name="error_protect_summary"><![CDATA[مراقبة تفاعلية لصحة الخدمة. إعادة تشغيل Shevery تلقائيًا في حال اكتشاف مشكلات أو انهيار.]]></string>
     <string name="settings_tcp_5555_title"><![CDATA[ربط TCP 5555]]></string>
     <string name="settings_tcp_5555_summary"><![CDATA[ربط خادم ADB المحلي بالمنفذ 5555 للحفاظ على تشغيله بدون تحديثات منفذ التصحيح اللاسلكي.]]></string>
     <string name="settings_tcp_5555_button"><![CDATA[الربط بـ 5555]]></string>
@@ -558,4 +560,61 @@
     <string name="tcp_prompt_dialog_enable"><![CDATA[يُمكَِن]]></string>
     <string name="tcp_prompt_dialog_later"><![CDATA[ليس الآن]]></string>
     <string name="tcp_prompt_dialog_do_not_remind"><![CDATA[لا تذكرني مرة أخرى]]></string>
+
+    <!-- Automation (Tasker / MacroDroid) -->
+    <string name="automation_settings_title"><![CDATA[الأتمتة]]></string>
+    <string name="automation_section_summary"><![CDATA[Tasker و MacroDroid ونوايا البث]]></string>
+    <string name="automation_tasker_macrodroid_title"><![CDATA[Tasker و MacroDroid]]></string>
+    <string name="automation_dialog_description"><![CDATA[تحكم في Shevery باستخدام Tasker أو MacroDroid عبر الإضافة المدمجة أو بإرسال مقاصد البث المباشرة. اضغط للنسخ.]]></string>
+    <string name="automation_dialog_actions_header"><![CDATA[إجراءات البث]]></string>
+    <string name="automation_dialog_target_header"><![CDATA[الحزمة المستهدفة]]></string>
+    <string name="automation_copied_to_clipboard"><![CDATA[تم النسخ إلى الحافظة]]></string>
+    <string name="automation_package_label"><![CDATA[الحزمة]]></string>
+    <string name="automation_action_start"><![CDATA[بدء الخادم]]></string>
+    <string name="automation_action_stop"><![CDATA[إيقاف الخادم]]></string>
+    <string name="automation_action_restart"><![CDATA[إعادة تشغيل الخادم]]></string>
+    <string name="automation_action_toggle"><![CDATA[تبديل حالة الخادم]]></string>
+    <string name="automation_plugin_method_title"><![CDATA[إضافة Tasker / Locale]]></string>
+    <string name="automation_plugin_method_summary"><![CDATA[إضافة مدمجة للإجراءات وشروط الحالة في Tasker و MacroDroid]]></string>
+
+    <!-- Backups, Extras & Classic Nav -->
+    <string name="settings_backups_title"><![CDATA[Backups]]></string>
+    <string name="settings_section_backups_summary"><![CDATA[Backup and restore settings]]></string>
+    <string name="settings_extras_title"><![CDATA[Extras]]></string>
+    <string name="settings_section_extras_summary"><![CDATA[Accessibility, diagnostics, and experiments]]></string>
+    <string name="settings_classic_nav"><![CDATA[Classic navigation bar]]></string>
+    <string name="settings_classic_nav_summary"><![CDATA[Use a fixed bottom bar instead of the floating pill]]></string>
+
+    <!-- Home - Automation -->
+    <string name="home_automation_title">التحكم في Shevery عبر تطبيقات الأتمتة</string>
+    <string name="home_automation_description">يمكن لتطبيقات مثل Tasker و MacroDroid إرسال مقاصد (Intents) لبدء Shevery أو إيقافه أو إعادة تشغيله تلقائياً.</string>
+    <string name="home_automation_button_view_intents">عرض المقاصد</string>
+    <string name="home_automation_bottom_sheet_intents">مقاصد الأتمتة</string>
+    <string name="home_automation_bottom_sheet_description">قم بتهيئة المقاصد في Tasker أو MacroDroid، أو قم بتشغيل الأمر مباشرة من Termux / ADB. انقر للنسخ.</string>
+    <string name="home_automation_connectors_disabled_warning">الموصلات معطلة حالياً. قم بتمكينها في الإعدادات ← الأتمتة للسماح بالمقاصد الواردة.</string>
+    <string name="home_automation_device_restriction">لاستخدام قصد البدء على إصدارات أندرويد القديمة بدون روت، يلزم أولاً تمكين ADB عبر TCP بتشغيل %1$s من جهاز كمبيوتر.</string>
+    <string name="home_automation_label_action">الإجراء</string>
+    <string name="home_automation_label_package">الحزمة</string>
+    <string name="home_automation_label_target">الهدف</string>
+    <string name="home_automation_label_extras">الإضافات (رمز المصادقة)</string>
+    <string name="home_automation_label_shell">أمر Shell / Termux</string>
+    <string name="home_automation_regenerate_token">إعادة إنشاء الرمز</string>
+    <string name="home_automation_regenerate_token_confirm">هل أنت متأكد من رغبتك في إعادة إنشاء الرمز؟ سيلزم تحديث أي مقاصد مسبقة في Tasker أو MacroDroid بالرمز الجديد.</string>
+    <string name="automation_security_group_title">المصادقة والأمان</string>
+    <string name="automation_security_description">تتطلب مقاصد البث المباشر تمرير رمز المصادقة السري هذا كإضافة \'auth\' (-e auth &lt;token&gt;). هذا يحمي Shevery من التطبيقات غير المصرح لها.</string>
+    <string name="automation_regenerate_token_summary">إنشاء رمز سري جديد وإبطال الرمز الحالي</string>
+    <string name="automation_target_component_label">مكون المستقبل</string>
+    <string name="home_automation_connectors_disabled_status">الموصلات معطلة (المقاصد غير نشطة)</string>
+    <string name="home_automation_connectors_active">الموصلات نشطة</string>
+    <string name="home_automation_connectors_active_desc">سيتم قبول مقاصد البث الواردة.</string>
+    <string name="home_automation_open_settings">فتح إعدادات الأتمتة</string>
+
+    <!-- Automation Alert Notifications -->
+    <string name="notification_channel_automation_alerts">تنبيهات الأتمتة</string>
+    <string name="notification_auth_missing_title">رمز المصادقة مطلوب</string>
+    <string name="notification_auth_missing_message">أضف “auth” الإضافي إلى قصدك. يمكنك العثور على رمزك ضمن الإعدادات ← الأتمتة.</string>
+    <string name="notification_auth_invalid_title">رمز مصادقة غير صالح</string>
+    <string name="notification_auth_invalid_message">تأكد من مطابقة الرمز في قصدك للرمز الموجود في إعدادات Shevery.</string>
+    <string name="notification_connectors_disabled_title">موصلات الأتمتة معطلة</string>
+    <string name="notification_connectors_disabled_message">تم حظر قصد الأتمتة لأن موصلات Shevery معطلة في الإعدادات. انقر للتمكين.</string>
 </resources>

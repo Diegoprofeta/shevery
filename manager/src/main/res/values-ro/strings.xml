@@ -300,6 +300,8 @@ a fost copiat în clipboard.]]></string>
     <string name="notification_watchdog_text"><![CDATA[Serviciul Shevery s-a oprit în mod neașteptat.]]></string>
     <string name="watchdog_service_title"><![CDATA[Funcția de monitorizare Shevery este activă]]></string>
     <string name="watchdog_service_text"><![CDATA[Monitorizarea serviciului Shevery pentru recuperarea prin keep-alive]]></string>
+    <string name="watchdog_action_turn_off"><![CDATA[Oprire]]></string>
+    <string name="watchdog_action_channel_settings"><![CDATA[Dezactivează alertele]]></string>
     <string name="notification_control_channel_name">Shevery Control</string>
     <string name="notification_startup_channel_name"><![CDATA[O companie start-up din Shevery]]></string>
     <string name="notification_startup_title"><![CDATA[Începutul lui Shevery]]></string>
@@ -518,7 +520,7 @@ Gata să primească comenzi.]]></string>
     <string name="diagnostics_limited"><![CDATA[limitat]]></string>
     <string name="diagnostics_unknown"><![CDATA[necunoscut]]></string>
     <string name="error_protect_title"><![CDATA[ErrorProtect]]></string>
-    <string name="error_protect_summary"><![CDATA[Verifică starea procesului și erorile tranzacționale la fiecare 10 secunde. Oprește și repornește automat Shevery dacă se detectează probleme.]]></string>
+    <string name="error_protect_summary"><![CDATA[Monitorizează starea serviciului în mod reactiv. Repornește automat Shevery dacă sunt detectate probleme sau blocări.]]></string>
     <string name="settings_tcp_5555_title"><![CDATA[Legare TCP 5555]]></string>
     <string name="settings_tcp_5555_summary"><![CDATA[Configurează serverul ADB local pe portul 5555 pentru ca acesta să funcționeze în continuare fără a fi necesare actualizări ale portului de depanare wireless.]]></string>
     <string name="settings_tcp_5555_button"><![CDATA[Conectează-te la 5555]]></string>
@@ -558,4 +560,61 @@ Gata să primească comenzi.]]></string>
     <string name="tcp_prompt_dialog_enable"><![CDATA[Permite]]></string>
     <string name="tcp_prompt_dialog_later"><![CDATA[Nu acum]]></string>
     <string name="tcp_prompt_dialog_do_not_remind"><![CDATA[Nu-mi mai aduce aminte]]></string>
+
+    <!-- Automation (Tasker / MacroDroid) -->
+    <string name="automation_settings_title"><![CDATA[Automatizare]]></string>
+    <string name="automation_section_summary"><![CDATA[Tasker, MacroDroid și intenții de difuzare]]></string>
+    <string name="automation_tasker_macrodroid_title"><![CDATA[Tasker & MacroDroid]]></string>
+    <string name="automation_dialog_description"><![CDATA[Controlați Shevery cu Tasker sau MacroDroid prin pluginul integrat sau trimițând intenții de difuzare explicite. Atingeți pentru a copia.]]></string>
+    <string name="automation_dialog_actions_header"><![CDATA[Acțiuni de difuzare]]></string>
+    <string name="automation_dialog_target_header"><![CDATA[Pachet țintă]]></string>
+    <string name="automation_copied_to_clipboard"><![CDATA[Copiat în clipboard]]></string>
+    <string name="automation_package_label"><![CDATA[Pachet]]></string>
+    <string name="automation_action_start"><![CDATA[Porniți serverul]]></string>
+    <string name="automation_action_stop"><![CDATA[Opriți serverul]]></string>
+    <string name="automation_action_restart"><![CDATA[Reporniți serverul]]></string>
+    <string name="automation_action_toggle"><![CDATA[Comutați serverul]]></string>
+    <string name="automation_plugin_method_title"><![CDATA[Plugin Tasker / Locale]]></string>
+    <string name="automation_plugin_method_summary"><![CDATA[Plugin integrat de acțiuni și condiții de stare în Tasker și MacroDroid]]></string>
+
+    <!-- Backups, Extras & Classic Nav -->
+    <string name="settings_backups_title"><![CDATA[Backups]]></string>
+    <string name="settings_section_backups_summary"><![CDATA[Backup and restore settings]]></string>
+    <string name="settings_extras_title"><![CDATA[Extras]]></string>
+    <string name="settings_section_extras_summary"><![CDATA[Accessibility, diagnostics, and experiments]]></string>
+    <string name="settings_classic_nav"><![CDATA[Classic navigation bar]]></string>
+    <string name="settings_classic_nav_summary"><![CDATA[Use a fixed bottom bar instead of the floating pill]]></string>
+
+    <!-- Home - Automation -->
+    <string name="home_automation_title">Controlează Shevery cu aplicații de automatizare</string>
+    <string name="home_automation_description">Aplicații precum Tasker și MacroDroid pot trimite intenții pentru a porni, opri, reporni sau comuta Shevery automat.</string>
+    <string name="home_automation_button_view_intents">Vizualizare intenții</string>
+    <string name="home_automation_bottom_sheet_intents">Intenții de automatizare</string>
+    <string name="home_automation_bottom_sheet_description">Configurați intențiile în Tasker sau MacroDroid, sau rulați comanda direct din Termux / ADB. Atingeți pentru a copia.</string>
+    <string name="home_automation_connectors_disabled_warning">Conectorii sunt dezactivați în prezent. Activați-i în Setări → Automatizare pentru a permite intențiile de difuzare primite.</string>
+    <string name="home_automation_device_restriction">Pentru a utiliza intenția de pornire pe versiuni mai vechi de Android fără root, trebuie mai întâi să activați ADB prin TCP rulând %1$s de pe un PC.</string>
+    <string name="home_automation_label_action">Acțiune</string>
+    <string name="home_automation_label_package">Pachet</string>
+    <string name="home_automation_label_target">Țintă</string>
+    <string name="home_automation_label_extras">Extra (Token de autentificare)</string>
+    <string name="home_automation_label_shell">Comandă Shell / Termux</string>
+    <string name="home_automation_regenerate_token">Regenerează token</string>
+    <string name="home_automation_regenerate_token_confirm">Sigur doriți să regenerați tokenul? Toate intențiile configurate vor trebui actualizate cu noul token.</string>
+    <string name="automation_security_group_title">Autentificare și securitate</string>
+    <string name="automation_security_description">Intențiile de difuzare directă necesită acest token secret de autentificare transmis ca extra \'auth\' (-e auth &lt;token&gt;). Aceasta protejează Shevery de aplicațiile neautorizate.</string>
+    <string name="automation_regenerate_token_summary">Generați un nou token secret și invalidați-l pe cel existent</string>
+    <string name="automation_target_component_label">Componentă receptor</string>
+    <string name="home_automation_connectors_disabled_status">Conectori dezactivați (Intenții inactive)</string>
+    <string name="home_automation_connectors_active">Conectori activi</string>
+    <string name="home_automation_connectors_active_desc">Intențiile de difuzare primite vor fi acceptate.</string>
+    <string name="home_automation_open_settings">Deschide setările de automatizare</string>
+
+    <!-- Automation Alert Notifications -->
+    <string name="notification_channel_automation_alerts">Alerte de automatizare</string>
+    <string name="notification_auth_missing_title">Token de autentificare necesar</string>
+    <string name="notification_auth_missing_message">Adăugați extra “auth” la intent. Puteți găsi tokenul în Setări → Automatizare.</string>
+    <string name="notification_auth_invalid_title">Token de autentificare nevalid</string>
+    <string name="notification_auth_invalid_message">Asigurați-vă că tokenul din intent coincide cu cel din Setările Shevery.</string>
+    <string name="notification_connectors_disabled_title">Conectori de automatizare dezactivați</string>
+    <string name="notification_connectors_disabled_message">Un intent de automatizare a fost blocat deoarece conectorii Shevery sunt dezactivați în Setări. Atingeți pentru activare.</string>
 </resources>

@@ -1,54 +1,83 @@
-# Tasker Plugin
+# Tasker & MacroDroid Automation Guide
 
-Shevery ships a built-in **Tasker / Locale plugin** (`:tasker` module) with 4 actions and 1 state condition. No root needed inside Tasker — the plugin forwards the command to Shevery, which starts/stops the server itself.
+Shevery provides native automation integration for **Tasker**, **MacroDroid**, **Automate**, and **ADB / Termux shell scripts**.
 
 Wiki mirror: https://github.com/HmnDev-Tech/shevery/wiki/Tasker-Plugin
 
-## Install
+> **Important**: To allow Tasker, MacroDroid, or external broadcasts to control Shevery, ensure **Shevery Connectors** is enabled under **Settings → Automation** (`Allow plugins to activate Shevery`). If disabled, control actions will be safely rejected.
 
-The plugin is bundled in the Shevery APK. Just install Shevery, then open Tasker — `Shevery Tasker` appears under plugins.
+---
 
-## Task actions (Task → Plugin → Shevery Tasker)
+## Method 1: Built-in Locale / Tasker Plugin (Recommended for Tasker)
 
-| Command | What it does |
+Shevery ships with a standard Tasker / Locale plugin interface (`:tasker` module) with 4 actions and 1 state condition.
+
+### 1. Task Actions (Task → Plugin → Shevery Tasker)
+
+| Action | Description |
 |---|---|
-| **Start server** | Sends `moe.shizuku.manager.action.START_SERVER` to `SheveryControlReceiver` (clears user-stop flag, enqueues `AdbStartWorker` for ADB mode, watchdog restarts the server) |
-| **Stop server** | Sends `moe.shizuku.manager.action.STOP_SERVER` (marks user-initiated stop so the watchdog stays off) |
-| **Restart server** | Stop → wait for binder death (max 10 s) → start. If the server is already down, just starts it |
-| **Toggle server** | `Shizuku.pingBinder()` → stop if running, start if not |
+| **Start server** | Clears user-stop flag, triggers wireless ADB auto-start if in ADB mode, and resumes watchdog service |
+| **Stop server** | Stops the Shizuku server and sets user-initiated flag to prevent automatic watchdog restarts |
+| **Restart server** | Gracefully stops the server, monitors binder death (up to 10 seconds), and restarts it cleanly |
+| **Toggle server** | Checks if server binder is alive: stops if running, starts if stopped |
 
-Configuration UI is `EditActivity`: a radio list for actions, a single fixed row for the condition. The choice is stored as JSON in the Locale bundle extra.
+### 2. State Condition (Profiles → State → Plugin → Shevery Tasker)
 
-## Profile condition (Profiles → + → State → Plugin → Shevery Tasker)
+- **Condition**: `Server is running`
+- Returns `RESULT_CONDITION_SATISFIED` when Shizuku server binder responds to ping, otherwise `RESULT_CONDITION_UNSATISFIED`.
 
-Single condition: **Server is running**.
+---
 
-Returns `RESULT_CONDITION_SATISFIED` (16) when `Shizuku.pingBinder()` is true, otherwise `RESULT_CONDITION_UNSATISFIED` (17).
+## Method 2: Direct Broadcast Intents (Recommended for MacroDroid)
 
-## Bundle format (Locale API)
+For tools like **MacroDroid**, **Automate**, or **Termux**, you can send standard explicit broadcast intents without configuring nested JSON bundles.
 
-Actions used: `com.twofortyfouram.locale.intent.action.EDIT_SETTING`, `EDIT_CONDITION`, `FIRE_SETTING`, `QUERY_CONDITION`.
+### Intent Parameters
 
-Extras:
+- **Target**: Broadcast
+- **Package**: `com.hamondev.shevery`
+- **Class / Receiver** (optional, recommended): `com.hamondev.shevery.tasker.PluginReceiver`
 
-- `com.twofortyfouram.locale.intent.extra.BLURB` — display string (`Shevery: start/stop/restart/toggle server`, `Shevery: server is running`)
-- `com.twofortyfouram.locale.intent.extra.BUNDLE` → Bundle with `com.twofortyfouram.locale.extra.STRING` = JSON:
-  - action: `{"command":"start|stop|restart|toggle"}`
-  - condition: `{"condition":"running"}`
+### Actions
 
-The `FIRE_SETTING` / `QUERY_CONDITION` broadcast must be **explicit** to `com.hamondev.shevery / com.hamondev.shevery.tasker.PluginReceiver`, otherwise it is ignored.
+| Intent Action | Action Effect |
+|---|---|
+| `com.hamondev.shevery.action.START_SERVER` | Start Shevery server |
+| `com.hamondev.shevery.action.STOP_SERVER` | Stop Shevery server |
+| `com.hamondev.shevery.action.RESTART_SERVER` | Gracefully restart Shevery server |
+| `com.hamondev.shevery.action.TOGGLE_SERVER` | Toggle Shevery server state |
 
-## Example: auto-start on charger
+### MacroDroid Setup Guide
 
-1. Profile: State → Power → AC.
-2. Enter task → Plugin → Shevery Tasker → **Start server**.
-3. Exit task → Plugin → Shevery Tasker → **Stop server**.
+1. In MacroDroid, add action: **Connectivity** → **Send Intent** (or search "Send Intent").
+2. Set **Action**: `com.hamondev.shevery.action.START_SERVER` (or `STOP_SERVER`, `RESTART_SERVER`, `TOGGLE_SERVER`).
+3. Set **Package**: `com.hamondev.shevery`.
+4. Set **Target**: `Broadcast`.
+5. Under **Extra 1**, set Parameter: `auth` and Value to your secret auth token (find and copy it via the Home screen **View intents** sheet). Save and test the macro!
 
-## Notes & limits
+---
 
-- Receiver: `com.hamondev.shevery.tasker.PluginReceiver` (`exported=true`, filters `FIRE_SETTING`, `QUERY_CONDITION`), config activity `.EditActivity` (`EDIT_SETTING`, `EDIT_CONDITION`).
-- Strings are localized (EN + RU): `tasker_plugin_name`, `tasker_command_*`, `tasker_blurb_*`, `tasker_condition_running`.
-- Restart relies on `Shizuku.OnBinderDeadListener` + 10 s fallback timer.
-- Direct control broadcasts (`SheveryControlReceiver`) are `exported=false` — third-party apps must go through this plugin, not send them directly. Raw intent reference: [intents.md](intents.md).
+## Method 3: Shell / ADB / Termux
 
-Sources: `tasker/src/main/java/com/hamondev/shevery/tasker/PluginContract.kt`, `PluginReceiver.kt`, `EditActivity.kt`, `tasker/src/main/AndroidManifest.xml`.
+You can also trigger server actions directly from ADB or Termux:
+
+```bash
+# Start server
+am broadcast -a com.hamondev.shevery.action.START_SERVER -p com.hamondev.shevery -e auth <token>
+
+# Stop server
+am broadcast -a com.hamondev.shevery.action.STOP_SERVER -p com.hamondev.shevery -e auth <token>
+
+# Restart server
+am broadcast -a com.hamondev.shevery.action.RESTART_SERVER -p com.hamondev.shevery -e auth <token>
+
+# Toggle server
+am broadcast -a com.hamondev.shevery.action.TOGGLE_SERVER -p com.hamondev.shevery -e auth <token>
+```
+
+---
+
+## In-App Automation Settings
+
+You can inspect all available actions and copy action strings or the package name directly to your clipboard in Shevery:
+**Settings** → **Automation** (`Tasker & MacroDroid`).

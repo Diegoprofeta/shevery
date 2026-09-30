@@ -294,6 +294,8 @@
     <string name="notification_watchdog_text"><![CDATA[Shevery सेवा अप्रत्याशित रूप से बंद हो गई है।]]></string>
     <string name="watchdog_service_title"><![CDATA[Shevery वॉचडॉग सक्रिय है]]></string>
     <string name="watchdog_service_text"><![CDATA[कीप-अलिव रिकवरी के लिए शेवरी सेवा की निगरानी]]></string>
+    <string name="watchdog_action_turn_off"><![CDATA[बंद करें]]></string>
+    <string name="watchdog_action_channel_settings"><![CDATA[अलर्ट बंद करें]]></string>
     <string name="notification_control_channel_name"><![CDATA[शेवरी कंट्रोल]]></string>
     <string name="notification_startup_channel_name"><![CDATA[हर स्टार्टअप]]></string>
     <string name="notification_startup_title"><![CDATA[शुरुआती शेवरी]]></string>
@@ -511,7 +513,7 @@
     <string name="diagnostics_limited"><![CDATA[सीमित]]></string>
     <string name="diagnostics_unknown"><![CDATA[अज्ञात]]></string>
     <string name="error_protect_title"><![CDATA[त्रुटि-संरक्षण]]></string>
-    <string name="error_protect_summary"><![CDATA[प्रत्येक 10 सेकंड में प्रक्रिया की स्वास्थ्य स्थिति और लेनदेन संबंधी त्रुटियों की जाँच करें। यदि कोई समस्या पाई जाती है तो स्वचालित रूप से Shevery को रोकें और पुनः आरंभ करें।]]></string>
+    <string name="error_protect_summary"><![CDATA[सेवा की स्थिति की प्रतिक्रियाशील निगरानी करता है। समस्याएं या क्रैश मिलने पर Shevery को स्वचालित रूप से पुनरारंभ करता है।]]></string>
     <string name="settings_tcp_5555_title"><![CDATA[टीसीपी पोर्ट 5555]]></string>
     <string name="settings_tcp_5555_summary"><![CDATA[वायरलेस डिबगिंग पोर्ट अपडेट्स के बिना स्थानीय ADB सर्वर को पोर्ट 5555 से बाँधें ताकि यह काम करता रहे।]]></string>
     <string name="settings_tcp_5555_button"><![CDATA[5555 से बाँधें]]></string>
@@ -553,4 +555,61 @@
     <string name="tcp_prompt_dialog_enable"><![CDATA[सक्षम]]></string>
     <string name="tcp_prompt_dialog_later"><![CDATA[अभी नहीं]]></string>
     <string name="tcp_prompt_dialog_do_not_remind"><![CDATA[मुझे दोबारा याद मत दिलाना]]></string>
+
+    <!-- Automation (Tasker / MacroDroid) -->
+    <string name="automation_settings_title"><![CDATA[स्वचालन]]></string>
+    <string name="automation_section_summary"><![CDATA[Tasker, MacroDroid और प्रसारण इंटेंट]]></string>
+    <string name="automation_tasker_macrodroid_title"><![CDATA[Tasker और MacroDroid]]></string>
+    <string name="automation_dialog_description"><![CDATA[इन-बिल्ट प्लगइन के माध्यम से या प्रसारण इंटेंट भेजकर Tasker या MacroDroid के साथ Shevery को नियंत्रित करें। कॉपी करने के लिए टैप करें।]]></string>
+    <string name="automation_dialog_actions_header"><![CDATA[प्रसारण क्रियाएं]]></string>
+    <string name="automation_dialog_target_header"><![CDATA[लक्षित पैकेज]]></string>
+    <string name="automation_copied_to_clipboard"><![CDATA[क्लिपबोर्ड पर कॉपी किया गया]]></string>
+    <string name="automation_package_label"><![CDATA[पैकेज]]></string>
+    <string name="automation_action_start"><![CDATA[सर्वर प्रारंभ करें]]></string>
+    <string name="automation_action_stop"><![CDATA[सर्वर बंद करें]]></string>
+    <string name="automation_action_restart"><![CDATA[सर्वर पुनरारंभ करें]]></string>
+    <string name="automation_action_toggle"><![CDATA[सर्वर टॉगल करें]]></string>
+    <string name="automation_plugin_method_title"><![CDATA[Tasker / Locale प्लगइन]]></string>
+    <string name="automation_plugin_method_summary"><![CDATA[Tasker और MacroDroid में एकीकृत क्रिया और स्थिति स्थिति प्लगइन]]></string>
+
+    <!-- Backups, Extras & Classic Nav -->
+    <string name="settings_backups_title"><![CDATA[Backups]]></string>
+    <string name="settings_section_backups_summary"><![CDATA[Backup and restore settings]]></string>
+    <string name="settings_extras_title"><![CDATA[Extras]]></string>
+    <string name="settings_section_extras_summary"><![CDATA[Accessibility, diagnostics, and experiments]]></string>
+    <string name="settings_classic_nav"><![CDATA[Classic navigation bar]]></string>
+    <string name="settings_classic_nav_summary"><![CDATA[Use a fixed bottom bar instead of the floating pill]]></string>
+
+    <!-- Home - Automation -->
+    <string name="home_automation_title">स्वचालन ऐप्स के साथ Shevery को नियंत्रित करें</string>
+    <string name="home_automation_description">Tasker और MacroDroid जैसे ऐप्स Shevery को स्वचालित रूप से शुरू, बंद, पुनरारंभ या टॉगल करने के लिए इंटेंट भेज सकते हैं।</string>
+    <string name="home_automation_button_view_intents">इंटेंट देखें</string>
+    <string name="home_automation_bottom_sheet_intents">स्वचालन इंटेंट</string>
+    <string name="home_automation_bottom_sheet_description">Tasker या MacroDroid में इंटेंट कॉन्फ़िगर करें, या Termux / ADB से सीधे कमांड चलाएं। कॉपी करने के लिए टैप करें।</string>
+    <string name="home_automation_connectors_disabled_warning">कनेक्टर्स वर्तमान में अक्षम हैं। आने वाले ब्रॉडकास्ट इंटेंट की अनुमति देने के लिए सेटिंग्स → स्वचालन में उन्हें सक्षम करें।</string>
+    <string name="home_automation_device_restriction">रूट के बिना पुराने Android संस्करणों पर स्टार्ट इंटेंट का उपयोग करने के लिए, आपको पहले पीसी से %1$s चलाकर TCP पर ADB सक्षम करना होगा।</string>
+    <string name="home_automation_label_action">क्रिया</string>
+    <string name="home_automation_label_package">पैकेज</string>
+    <string name="home_automation_label_target">लक्ष्य</string>
+    <string name="home_automation_label_extras">अतिरिक्त (प्रमाणीकरण टोकन)</string>
+    <string name="home_automation_label_shell">Shell / Termux कमांड</string>
+    <string name="home_automation_regenerate_token">टोकन पुन: उत्पन्न करें</string>
+    <string name="home_automation_regenerate_token_confirm">क्या आप वाकई टोकन को फिर से जनरेट करना चाहते हैं? कॉन्फ़िगर किए गए किसी भी टास्क या मैक्रो इंटेंट को नए टोकन के साथ अपडेट करना होगा।</string>
+    <string name="automation_security_group_title">प्रमाणीकरण और सुरक्षा</string>
+    <string name="automation_security_description">सीधे प्रसारण इंटेंट के लिए इस गुप्त प्रमाणीकरण टोकन को \'auth\' अतिरिक्त (-e auth &lt;token&gt;) के रूप में पास करना आवश्यक है। यह Shevery को अनधिकृत ऐप्स से बचाता है।</string>
+    <string name="automation_regenerate_token_summary">एक नया गुप्त टोकन जनरेट करें और मौजूदा को अमान्य करें</string>
+    <string name="automation_target_component_label">रिसीवर घटक</string>
+    <string name="home_automation_connectors_disabled_status">कनेक्टर्स अक्षम हैं (इंटेंट निष्क्रिय)</string>
+    <string name="home_automation_connectors_active">कनेक्टर्स सक्रिय हैं</string>
+    <string name="home_automation_connectors_active_desc">आने वाले ब्रॉडकास्ट इंटेंट स्वीकार किए जाएंगे।</string>
+    <string name="home_automation_open_settings">स्वचालन सेटिंग्स खोलें</string>
+
+    <!-- Automation Alert Notifications -->
+    <string name="notification_channel_automation_alerts">स्वचालन अलर्ट</string>
+    <string name="notification_auth_missing_title">प्रमाणीकरण टोकन आवश्यक है</string>
+    <string name="notification_auth_missing_message">अपने इंटेंट में “auth” अतिरिक्त जोड़ें। आप सेटिंग्स → स्वचालन के तहत अपना टोकन पा सकते हैं।</string>
+    <string name="notification_auth_invalid_title">अमान्य प्रमाणीकरण टोकन</string>
+    <string name="notification_auth_invalid_message">सुनिश्चित करें कि आपके इंटेंट का टोकन Shevery सेटिंग्स के टोकन से मेल खाता है।</string>
+    <string name="notification_connectors_disabled_title">स्वचालन कनेक्टर्स अक्षम हैं</string>
+    <string name="notification_connectors_disabled_message">एक स्वचालन इंटेंट को ब्लॉक कर दिया गया क्योंकि सेटिंग्स में Shevery कनेक्टर्स अक्षम हैं। सक्षम करने के लिए टैप करें।</string>
 </resources>

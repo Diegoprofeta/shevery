@@ -300,6 +300,8 @@
     <string name="notification_watchdog_text"><![CDATA[บริการ Shevery ได้หยุดทำงานอย่างกะทันหัน]]></string>
     <string name="watchdog_service_title"><![CDATA[Shevery watchdog กำลังทำงานอยู่]]></string>
     <string name="watchdog_service_text"><![CDATA[การติดตามบริการ Shevery เพื่อการกู้คืนระบบ keep-alive]]></string>
+    <string name="watchdog_action_turn_off"><![CDATA[ปิด]]></string>
+    <string name="watchdog_action_channel_settings"><![CDATA[ปิดการแจ้งเตือน]]></string>
     <string name="notification_control_channel_name"><![CDATA[ระบบควบคุม Shevery]]></string>
     <string name="notification_startup_channel_name"><![CDATA[การเริ่มต้น Shevery]]></string>
     <string name="notification_startup_title"><![CDATA[เริ่มต้น Shevery]]></string>
@@ -518,7 +520,7 @@
     <string name="diagnostics_limited"><![CDATA[จำกัด]]></string>
     <string name="diagnostics_unknown"><![CDATA[ไม่ทราบ]]></string>
     <string name="error_protect_title"><![CDATA[ข้อผิดพลาดป้องกัน]]></string>
-    <string name="error_protect_summary"><![CDATA[ตรวจสอบสภาพการทำงานของระบบและข้อผิดพลาดในการทำธุรกรรมทุก 10 วินาที หากพบปัญหา ระบบจะหยุดและเริ่มต้น Shevery ใหม่โดยอัตโนมัติ]]></string>
+    <string name="error_protect_summary"><![CDATA[ตรวจสอบสถานะการทำงานของบริการแบบตอบสนอง หากพบปัญหาหรือข้อขัดข้อง ระบบจะเริ่มต้น Shevery ใหม่อัตโนมัติ]]></string>
     <string name="settings_tcp_5555_title"><![CDATA[พอร์ต TCP 5555]]></string>
     <string name="settings_tcp_5555_summary"><![CDATA[ผูกเซิร์ฟเวอร์ ADB ท้องถิ่นกับพอร์ต 5555 เพื่อให้มันทำงานได้ต่อไปโดยไม่ต้องอัปเดตพอร์ต Wireless Debugging]]></string>
     <string name="settings_tcp_5555_button"><![CDATA[ตั้งค่าให้เชื่อมต่อกับ 5555]]></string>
@@ -558,4 +560,61 @@
     <string name="tcp_prompt_dialog_enable"><![CDATA[เปิดใช้งาน]]></string>
     <string name="tcp_prompt_dialog_later"><![CDATA[ไม่ใช่ตอนนี้]]></string>
     <string name="tcp_prompt_dialog_do_not_remind"><![CDATA[อย่าเตือนฉันอีก]]></string>
+
+    <!-- Automation (Tasker / MacroDroid) -->
+    <string name="automation_settings_title"><![CDATA[ระบบอัตโนมัติ]]></string>
+    <string name="automation_section_summary"><![CDATA[Tasker, MacroDroid และ Broadcast Intent]]></string>
+    <string name="automation_tasker_macrodroid_title"><![CDATA[Tasker และ MacroDroid]]></string>
+    <string name="automation_dialog_description"><![CDATA[ควบคุม Shevery ด้วย Tasker หรือ MacroDroid ผ่านปลั๊กอินในตัวหรือส่ง Broadcast Intent แตะรายการเพื่อคัดลอก]]></string>
+    <string name="automation_dialog_actions_header"><![CDATA[การดำเนินการออกอากาศ]]></string>
+    <string name="automation_dialog_target_header"><![CDATA[แพ็กเกจเป้าหมาย]]></string>
+    <string name="automation_copied_to_clipboard"><![CDATA[คัดลอกไปยังคลิปบอร์ดแล้ว]]></string>
+    <string name="automation_package_label"><![CDATA[แพ็กเกจ]]></string>
+    <string name="automation_action_start"><![CDATA[เริ่มเซิร์ฟเวอร์]]></string>
+    <string name="automation_action_stop"><![CDATA[หยุดเซิร์ฟเวอร์]]></string>
+    <string name="automation_action_restart"><![CDATA[รีสตาร์ทเซิร์ฟเวอร์]]></string>
+    <string name="automation_action_toggle"><![CDATA[สลับเซิร์ฟเวอร์]]></string>
+    <string name="automation_plugin_method_title"><![CDATA[ปลั๊กอิน Tasker / Locale]]></string>
+    <string name="automation_plugin_method_summary"><![CDATA[ปลั๊กอินการดำเนินการและเงื่อนไขสถานะในตัวสำหรับ Tasker และ MacroDroid]]></string>
+
+    <!-- Backups, Extras & Classic Nav -->
+    <string name="settings_backups_title"><![CDATA[Backups]]></string>
+    <string name="settings_section_backups_summary"><![CDATA[Backup and restore settings]]></string>
+    <string name="settings_extras_title"><![CDATA[Extras]]></string>
+    <string name="settings_section_extras_summary"><![CDATA[Accessibility, diagnostics, and experiments]]></string>
+    <string name="settings_classic_nav"><![CDATA[Classic navigation bar]]></string>
+    <string name="settings_classic_nav_summary"><![CDATA[Use a fixed bottom bar instead of the floating pill]]></string>
+
+    <!-- Home - Automation -->
+    <string name="home_automation_title">ควบคุม Shevery ด้วยแอปอัตโนมัติ</string>
+    <string name="home_automation_description">แอปอย่าง Tasker และ MacroDroid สามารถส่ง Intent เพื่อเริ่ม หยุด รีสตาร์ท หรือสลับ Shevery โดยอัตโนมัติ</string>
+    <string name="home_automation_button_view_intents">ดู Intent</string>
+    <string name="home_automation_bottom_sheet_intents">Intent อัตโนมัติ</string>
+    <string name="home_automation_bottom_sheet_description">กำหนดค่า Intent ใน Tasker หรือ MacroDroid หรือเรียกใช้คำสั่งโดยตรงจาก Termux / ADB แตะเพื่อคัดลอก</string>
+    <string name="home_automation_connectors_disabled_warning">ตัวเชื่อมต่อถูกปิดใช้งานอยู่ในขณะนี้ เปิดใช้งานในการตั้งค่า → ระบบอัตโนมัติ เพื่ออนุญาต Intent การแพร่ภาพขาเข้า</string>
+    <string name="home_automation_device_restriction">หากต้องการใช้ Intent เริ่มต้นบน Android เวอร์ชันเก่าโดยไม่มีรูท คุณต้องเปิดใช้งาน ADB over TCP ก่อนโดยเรียกใช้ %1$s จากพีซี</string>
+    <string name="home_automation_label_action">การดำเนินการ</string>
+    <string name="home_automation_label_package">แพ็กเกจ</string>
+    <string name="home_automation_label_target">เป้าหมาย</string>
+    <string name="home_automation_label_extras">ส่วนเพิ่มเติม (โทเค็นการตรวจสอบสิทธิ์)</string>
+    <string name="home_automation_label_shell">คำสั่ง Shell / Termux</string>
+    <string name="home_automation_regenerate_token">สร้างโทเค็นใหม่</string>
+    <string name="home_automation_regenerate_token_confirm">แน่ใจหรือไม่ว่าต้องการสร้างโทเค็นใหม่ Intent ที่กำหนดค่าไว้จะต้องอัปเดตด้วยโทเค็นใหม่</string>
+    <string name="automation_security_group_title">การตรวจสอบสิทธิ์และความปลอดภัย</string>
+    <string name="automation_security_description">Intent การแพร่ภาพโดยตรงต้องใช้โทเค็นลับนี้ส่งเป็นส่วนเสริม \'auth\' (-e auth &lt;token&gt;) ซึ่งจะช่วยปกป้อง Shevery จากแอปที่ไม่ได้รับอนุญาต</string>
+    <string name="automation_regenerate_token_summary">สร้างโทเค็นลับใหม่และยกเลิกโทเค็นเดิม</string>
+    <string name="automation_target_component_label">คอมโพเนนต์ตัวรับ</string>
+    <string name="home_automation_connectors_disabled_status">ตัวเชื่อมต่อถูกปิดใช้งาน (Intent ไม่ทำงาน)</string>
+    <string name="home_automation_connectors_active">ตัวเชื่อมต่อเปิดใช้งานอยู่</string>
+    <string name="home_automation_connectors_active_desc">จะยอมรับ Intent การแพร่ภาพขาเข้า</string>
+    <string name="home_automation_open_settings">เปิดการตั้งค่าระบบอัตโนมัติ</string>
+
+    <!-- Automation Alert Notifications -->
+    <string name="notification_channel_automation_alerts">การแจ้งเตือนอัตโนมัติ</string>
+    <string name="notification_auth_missing_title">ต้องใช้โทเค็นการยืนยันตัวตน</string>
+    <string name="notification_auth_missing_message">เพิ่ม “auth” พิเศษใน Intent ของคุณ คุณสามารถค้นหาโทเค็นได้ที่ การตั้งค่า → อัตโนมัติ</string>
+    <string name="notification_auth_invalid_title">โทเค็นการยืนยันตัวตนไม่ถูกต้อง</string>
+    <string name="notification_auth_invalid_message">ตรวจสอบให้แน่ใจว่าโทเค็นใน Intent ของคุณตรงกับโทเค็นในการตั้งค่า Shevery</string>
+    <string name="notification_connectors_disabled_title">ตัวเชื่อมต่ออัตโนมัติถูกปิดใช้งาน</string>
+    <string name="notification_connectors_disabled_message">Intent อัตโนมัติถูกบล็อกเนื่องจากตัวเชื่อมต่อ Shevery ถูกปิดใช้งานในการตั้งค่า แตะเพื่อเปิดใช้งาน</string>
 </resources>

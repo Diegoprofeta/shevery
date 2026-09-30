@@ -298,6 +298,8 @@ on kopioitu leikepöydälle.]]></string>
     <string name="notification_watchdog_text"><![CDATA[Shevery-palvelu on keskeytynyt odottamattomasti.]]></string>
     <string name="watchdog_service_title"><![CDATA[Shevery-valvontaohjelma on käynnissä]]></string>
     <string name="watchdog_service_text"><![CDATA[Shevery-palvelun seuranta keep-alive-toiminnon palautumisen varmistamiseksi]]></string>
+    <string name="watchdog_action_turn_off"><![CDATA[Poista käytöstä]]></string>
+    <string name="watchdog_action_channel_settings"><![CDATA[Poista hälytykset käytöstä]]></string>
     <string name="notification_control_channel_name"><![CDATA[Shevery-ohjaus]]></string>
     <string name="notification_startup_channel_name"><![CDATA[Shevery-startup]]></string>
     <string name="notification_startup_title"><![CDATA[Sheveryn aloitus]]></string>
@@ -516,7 +518,7 @@ Valmis ottamaan komentoja vastaan.]]></string>
     <string name="diagnostics_limited"><![CDATA[rajoitettu]]></string>
     <string name="diagnostics_unknown"><![CDATA[tuntematon]]></string>
     <string name="error_protect_title"><![CDATA[ErrorProtect]]></string>
-    <string name="error_protect_summary"><![CDATA[Tarkista prosessin tila ja transaktiovirheet 10 sekunnin välein. Pysäyttää ja käynnistää Sheveryn automaattisesti uudelleen, jos ongelmia havaitaan.]]></string>
+    <string name="error_protect_summary"><![CDATA[Valvoo palvelun tilaa reaktiivisesti. Käynnistää Sheveryn automaattisesti uudelleen, jos havaitaan ongelmia tai kaatumisia.]]></string>
     <string name="settings_tcp_5555_title"><![CDATA[TCP-liitäntä 5555]]></string>
     <string name="settings_tcp_5555_summary"><![CDATA[Määritä paikallinen ADB-palvelin käyttämään porttia 5555, jotta se toimii ilman langattoman virheenkorjausportin päivityksiä.]]></string>
     <string name="settings_tcp_5555_button"><![CDATA[Yhdistä numeroon 5555]]></string>
@@ -558,4 +560,61 @@ Valmis ottamaan komentoja vastaan.]]></string>
     <string name="tcp_prompt_dialog_enable"><![CDATA[Ota käyttöön]]></string>
     <string name="tcp_prompt_dialog_later"><![CDATA[Ei nyt]]></string>
     <string name="tcp_prompt_dialog_do_not_remind"><![CDATA[Älä muistuta minua uudelleen]]></string>
+
+    <!-- Automation (Tasker / MacroDroid) -->
+    <string name="automation_settings_title"><![CDATA[Automaatio]]></string>
+    <string name="automation_section_summary"><![CDATA[Tasker, MacroDroid ja lähetys-intentit]]></string>
+    <string name="automation_tasker_macrodroid_title"><![CDATA[Tasker & MacroDroid]]></string>
+    <string name="automation_dialog_description"><![CDATA[Ohjaa Sheveryä Taskerilla tai MacroDroidilla sisäänrakennetun lisäosan avulla tai lähettämällä suoria lähetys-intenttejä. Kopioi napauttamalla.]]></string>
+    <string name="automation_dialog_actions_header"><![CDATA[Lähetystoiminnot]]></string>
+    <string name="automation_dialog_target_header"><![CDATA[Kohdepaketti]]></string>
+    <string name="automation_copied_to_clipboard"><![CDATA[Kopioitu leikepöydälle]]></string>
+    <string name="automation_package_label"><![CDATA[Paketti]]></string>
+    <string name="automation_action_start"><![CDATA[Käynnistä palvelin]]></string>
+    <string name="automation_action_stop"><![CDATA[Pysäytä palvelin]]></string>
+    <string name="automation_action_restart"><![CDATA[Käynnistä palvelin uudelleen]]></string>
+    <string name="automation_action_toggle"><![CDATA[Vaihda palvelimen tilaa]]></string>
+    <string name="automation_plugin_method_title"><![CDATA[Tasker / Locale -lisäosa]]></string>
+    <string name="automation_plugin_method_summary"><![CDATA[Integroitu toiminto- ja tilapohjainen lisäosa Taskeriin ja MacroDroidiin]]></string>
+
+    <!-- Backups, Extras & Classic Nav -->
+    <string name="settings_backups_title"><![CDATA[Backups]]></string>
+    <string name="settings_section_backups_summary"><![CDATA[Backup and restore settings]]></string>
+    <string name="settings_extras_title"><![CDATA[Extras]]></string>
+    <string name="settings_section_extras_summary"><![CDATA[Accessibility, diagnostics, and experiments]]></string>
+    <string name="settings_classic_nav"><![CDATA[Classic navigation bar]]></string>
+    <string name="settings_classic_nav_summary"><![CDATA[Use a fixed bottom bar instead of the floating pill]]></string>
+
+    <!-- Home - Automation -->
+    <string name="home_automation_title">Ohjaa Sheveryä automaatiosovelluksilla</string>
+    <string name="home_automation_description">Taskerin ja MacroDroidin kaltaiset sovellukset voivat lähettää intenttejä Sheveryn käynnistämiseksi, pysäyttämiseksi, uudelleenkäynnistämiseksi tai vaihtamiseksi automaattisesti.</string>
+    <string name="home_automation_button_view_intents">Näytä intentit</string>
+    <string name="home_automation_bottom_sheet_intents">Automaatio-intentit</string>
+    <string name="home_automation_bottom_sheet_description">Määritä intentit Taskerissa tai MacroDroidissa tai suorita komento suoraan Termuxista / ADB:stä. Kopioi napauttamalla.</string>
+    <string name="home_automation_connectors_disabled_warning">Liittimet ovat tällä hetkellä poissa käytöstä. Ota ne käyttöön kohdassa Asetukset → Automaatio salliaksesi saapuvat broadcast-intentit.</string>
+    <string name="home_automation_device_restriction">Jos haluat käyttää käynnistysintentiä vanhemmissa Android-versioissa ilman rootia, ota ensin käyttöön ADB over TCP suorittamalla %1$s tietokoneelta.</string>
+    <string name="home_automation_label_action">Toiminto</string>
+    <string name="home_automation_label_package">Paketti</string>
+    <string name="home_automation_label_target">Kohde</string>
+    <string name="home_automation_label_extras">Lisäosat (Todennustunniste)</string>
+    <string name="home_automation_label_shell">Shell- / Termux-komento</string>
+    <string name="home_automation_regenerate_token">Luo tunniste uudelleen</string>
+    <string name="home_automation_regenerate_token_confirm">Haluatko varmasti luoda tunnisteen uudelleen? Kaikki määritetyt intentit on päivitettävä uudella tunnisteella.</string>
+    <string name="automation_security_group_title">Todennus ja turvallisuus</string>
+    <string name="automation_security_description">Suorat broadcast-intentit edellyttävät tämän salaisen todennustunnisteen välittämistä \'auth\'-lisäosana (-e auth &lt;token&gt;). Tämä suojaa Sheveryä luvattomilta sovelluksilta.</string>
+    <string name="automation_regenerate_token_summary">Luo uusi salainen tunniste ja mitätöi nykyinen</string>
+    <string name="automation_target_component_label">Vastaanotinkomponentti</string>
+    <string name="home_automation_connectors_disabled_status">Liittimet poistettu käytöstä (Intentit ei-aktiivisia)</string>
+    <string name="home_automation_connectors_active">Liittimet aktiivisia</string>
+    <string name="home_automation_connectors_active_desc">Saapuvat broadcast-intentit hyväksytään.</string>
+    <string name="home_automation_open_settings">Avaa automaatioasetukset</string>
+
+    <!-- Automation Alert Notifications -->
+    <string name="notification_channel_automation_alerts">Automaatiohälytykset</string>
+    <string name="notification_auth_missing_title">Todennustunnus vaaditaan</string>
+    <string name="notification_auth_missing_message">Lisää “auth”-extra intentiisi. Löydät tunnuksesi kohdasta Asetukset → Automaatio.</string>
+    <string name="notification_auth_invalid_title">Virheellinen toennustunnus</string>
+    <string name="notification_auth_invalid_message">Varmista, että intentissä oleva tunnus vastaa Shevery-asetuksissa olevaa.</string>
+    <string name="notification_connectors_disabled_title">Automaatioliittimet poistettu käytöstä</string>
+    <string name="notification_connectors_disabled_message">Automaatio-intent estettiin, koska Shevery-liittimet on poistettu käytöstä Asetuksissa. Ota käyttöön napauttamalla.</string>
 </resources>

@@ -6,11 +6,13 @@ import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
@@ -38,6 +40,9 @@ import moe.shizuku.manager.ui.compose.SettingsGroup
 import moe.shizuku.manager.ui.compose.SettingsRow
 import moe.shizuku.manager.ui.compose.GroupDivider
 import moe.shizuku.manager.utils.CustomTabsHelper
+
+private const val ABOUT_ICON_TAP_THRESHOLD = 7
+private const val ABOUT_ICON_TAP_URL = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
 
 class AboutActivity : AppActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -108,6 +113,22 @@ class AboutActivity : AppActivity() {
                     }
 
                     item {
+                        AboutVersioningCard()
+                    }
+
+                    item {
+                        Spacer(modifier = Modifier.height(24.dp))
+                    }
+
+                    item {
+                        AboutContributorsGroup()
+                    }
+
+                    item {
+                        Spacer(modifier = Modifier.height(24.dp))
+                    }
+
+                    item {
                         AboutLinksGroup()
                     }
 
@@ -156,6 +177,7 @@ class AboutActivity : AppActivity() {
     @Composable
     private fun AboutHeader(versionName: String) {
         val context = androidx.compose.ui.platform.LocalContext.current
+        var iconTaps by remember { mutableIntStateOf(0) }
         val appIcon = remember(context) {
             runCatching {
                 val drawable = context.packageManager.getApplicationIcon(context.packageName)
@@ -181,6 +203,13 @@ class AboutActivity : AppActivity() {
                         modifier = Modifier
                             .size(96.dp)
                             .clip(RoundedCornerShape(24.dp))
+                            .clickable {
+                                iconTaps++
+                                if (iconTaps >= ABOUT_ICON_TAP_THRESHOLD) {
+                                    iconTaps = 0
+                                    CustomTabsHelper.launchUrlOrCopy(context, ABOUT_ICON_TAP_URL)
+                                }
+                            }
                     )
                 }
 
@@ -235,6 +264,120 @@ class AboutActivity : AppActivity() {
                     style = MaterialTheme.typography.bodyMedium,
                     lineHeight = 20.sp,
                     color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+            }
+        }
+    }
+
+    @Composable
+    private fun AboutVersioningCard() {
+        Card(
+            shape = MaterialTheme.shapes.extraLarge,
+            colors = CardDefaults.cardColors(
+                containerColor = MaterialTheme.colorScheme.surfaceContainerLow
+            ),
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Column(modifier = Modifier.padding(24.dp)) {
+                Text(
+                    text = "Versioning",
+                    style = MaterialTheme.typography.titleMedium,
+                    fontWeight = FontWeight.Bold,
+                    color = MaterialTheme.colorScheme.primary,
+                    modifier = Modifier.padding(bottom = 8.dp)
+                )
+                Text(
+                    text = "Starting with 14.0, Shevery no longer uses the old \"14.0 rXX\" revision scheme. Releases advance as 14.0, 14.1, … up to 14.9, then continue at 15.0–15.9, and so on. The internal git commit count used for versionCode is unchanged.",
+                    style = MaterialTheme.typography.bodyMedium,
+                    lineHeight = 20.sp,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+            }
+        }
+    }
+
+    private data class Contributor(
+        val name: String,
+        val role: String,
+        val url: String
+    )
+
+    private val contributors = listOf(
+        Contributor(
+            "HmnDev-Tech",
+            "Project lead — releases, CI, settings hub, watchdog, self-update, docs and project direction",
+            "https://github.com/HmnDev-Tech"
+        ),
+        Contributor(
+            "Landon Moran",
+            "Core developer — AI providers and Commandium, Material 3 Expressive, ADB hardening, Compose migrations, i18n, code cleanup",
+            "https://github.com/LandonMoran"
+        ),
+        Contributor(
+            "kerneldroid",
+            "Comput console redesign, module catalog UI, Tasker plugin, legacy API stub, CI signing and module install fixes",
+            "https://github.com/kerneldroid"
+        ),
+        Contributor(
+            "OptionString",
+            "Expressive floating navigation, Comput M3 redesign, launcher icons, settings layout and release workflow",
+            "https://github.com/superman32432432"
+        ),
+        Contributor(
+            "CodexofLost",
+            "Material 3 tokens, wireless ADB and starter reliability, permission auth, watchdog and server startup fixes",
+            "https://github.com/CodexofLost"
+        ),
+        Contributor(
+            "Codex",
+            "Service reliability: ADB lifecycle, TCP mode, watchdog keep-alive, notification controls, dialog migration",
+            "https://github.com/codex"
+        ),
+        Contributor(
+            "arysm4a",
+            "Wireless-debugging boot autostart, Dhizuku compatibility stubs, biometric auth & session security, Jetpack Compose UI/UX modernization",
+            "https://github.com/tim1540"
+        ),
+        Contributor(
+            "Jursin",
+            "About screen, zh-CN translations, README wording",
+            "https://github.com/Jursin"
+        ),
+        Contributor(
+            "Fancy Fonts",
+            "Asset and resource updates, translation strings, workflow cleanup",
+            "https://github.com/blockawa"
+        ),
+        Contributor(
+            "tura-ai-agent",
+            "README localization (Japanese, Chinese) and language links",
+            "https://github.com/tura-ai-agent"
+        ),
+        Contributor(
+            "Rikka",
+            "Original Shizuku project — the foundation Shevery is built on",
+            "https://github.com/RikkaApps"
+        ),
+        Contributor(
+            "iamr0s",
+            "Dhizuku project — Device Owner architecture, API sharing and management integrated into Shevery",
+            "https://github.com/iamr0s"
+        )
+    )
+
+    @Composable
+    private fun AboutContributorsGroup() {
+        val context = this@AboutActivity
+        SettingsGroup(title = "Contributors & developers") {
+            contributors.forEachIndexed { index, contributor ->
+                if (index > 0) GroupDivider()
+                SettingsRow(
+                    icon = null,
+                    title = contributor.name,
+                    summary = contributor.role,
+                    onClick = {
+                        CustomTabsHelper.launchUrlOrCopy(context, contributor.url)
+                    }
                 )
             }
         }

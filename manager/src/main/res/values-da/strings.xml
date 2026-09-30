@@ -298,6 +298,8 @@ h er blevet kopieret til udklipsholderen.]]></string>
     <string name="notification_watchdog_text"><![CDATA[Shevery-tjenesten er uventet gået ned.]]></string>
     <string name="watchdog_service_title"><![CDATA[Shevery-overvågningsprogrammet er aktivt]]></string>
     <string name="watchdog_service_text"><![CDATA[Overvågning af Shevery-tjenesten med henblik på genopretning af keep-alive-forbindelsen]]></string>
+    <string name="watchdog_action_turn_off"><![CDATA[Sluk]]></string>
+    <string name="watchdog_action_channel_settings"><![CDATA[Slå advarsler fra]]></string>
     <string name="notification_control_channel_name"><![CDATA[Shevery-styring]]></string>
     <string name="notification_startup_channel_name"><![CDATA[Shevery-startup]]></string>
     <string name="notification_startup_title"><![CDATA[Shevery starter]]></string>
@@ -516,7 +518,7 @@ Klar til kommandoer.]]></string>
     <string name="diagnostics_limited"><![CDATA[begrænset]]></string>
     <string name="diagnostics_unknown"><![CDATA[ukendt]]></string>
     <string name="error_protect_title"><![CDATA[ErrorProtect]]></string>
-    <string name="error_protect_summary"><![CDATA[Kontrollerer systemets tilstand og transaktionsfejl hvert 10. sekund. Stopper og genstarter automatisk Shevery, hvis der opdages problemer.]]></string>
+    <string name="error_protect_summary"><![CDATA[Overvåger tjenestetilstanden reaktivt. Genstarter automatisk Shevery, hvis der registreres problemer eller nedbrud.]]></string>
     <string name="settings_tcp_5555_title"><![CDATA[TCP-port 5555]]></string>
     <string name="settings_tcp_5555_summary"><![CDATA[Tilknyt den lokale ADB-server til port 5555, så den fortsat fungerer, selvom porten til trådløs fejlfinding ændres.]]></string>
     <string name="settings_tcp_5555_button"><![CDATA[Forbind til 5555]]></string>
@@ -558,4 +560,61 @@ Klar til kommandoer.]]></string>
     <string name="tcp_prompt_dialog_enable"><![CDATA[Aktiver]]></string>
     <string name="tcp_prompt_dialog_later"><![CDATA[Ikke nu]]></string>
     <string name="tcp_prompt_dialog_do_not_remind"><![CDATA[Mind mig ikke om det igen]]></string>
+
+    <!-- Automation (Tasker / MacroDroid) -->
+    <string name="automation_settings_title"><![CDATA[Automatisering]]></string>
+    <string name="automation_section_summary"><![CDATA[Tasker, MacroDroid og broadcast-intents]]></string>
+    <string name="automation_tasker_macrodroid_title"><![CDATA[Tasker & MacroDroid]]></string>
+    <string name="automation_dialog_description"><![CDATA[Styr Shevery med Tasker eller MacroDroid via det indbyggede plugin eller ved at sende broadcast-intents. Tryk for at kopiere.]]></string>
+    <string name="automation_dialog_actions_header"><![CDATA[Broadcast-handlinger]]></string>
+    <string name="automation_dialog_target_header"><![CDATA[Målpakke]]></string>
+    <string name="automation_copied_to_clipboard"><![CDATA[Kopieret til udklipsholder]]></string>
+    <string name="automation_package_label"><![CDATA[Pakke]]></string>
+    <string name="automation_action_start"><![CDATA[Start server]]></string>
+    <string name="automation_action_stop"><![CDATA[Stop server]]></string>
+    <string name="automation_action_restart"><![CDATA[Genstart server]]></string>
+    <string name="automation_action_toggle"><![CDATA[Skift serverstatus]]></string>
+    <string name="automation_plugin_method_title"><![CDATA[Tasker / Locale-plugin]]></string>
+    <string name="automation_plugin_method_summary"><![CDATA[Integreret handling- og tilstandsbetingelsesplugin i Tasker og MacroDroid]]></string>
+
+    <!-- Backups, Extras & Classic Nav -->
+    <string name="settings_backups_title"><![CDATA[Backups]]></string>
+    <string name="settings_section_backups_summary"><![CDATA[Backup and restore settings]]></string>
+    <string name="settings_extras_title"><![CDATA[Extras]]></string>
+    <string name="settings_section_extras_summary"><![CDATA[Accessibility, diagnostics, and experiments]]></string>
+    <string name="settings_classic_nav"><![CDATA[Classic navigation bar]]></string>
+    <string name="settings_classic_nav_summary"><![CDATA[Use a fixed bottom bar instead of the floating pill]]></string>
+
+    <!-- Home - Automation -->
+    <string name="home_automation_title">Styr Shevery med automatiseringsapps</string>
+    <string name="home_automation_description">Apps som Tasker og MacroDroid kan sende intents til automatisk at starte, stoppe, genstarte eller skifte Shevery.</string>
+    <string name="home_automation_button_view_intents">Vis intents</string>
+    <string name="home_automation_bottom_sheet_intents">Automatiserings-intents</string>
+    <string name="home_automation_bottom_sheet_description">Konfigurer intents i Tasker eller MacroDroid, eller kør kommandoen direkte fra Termux / ADB. Tryk for at kopiere.</string>
+    <string name="home_automation_connectors_disabled_warning">Konnektorer er i øjeblikket deaktiveret. Aktivér dem i Indstillinger → Automatisering for at tillade indgående broadcast-intents.</string>
+    <string name="home_automation_device_restriction">For at bruge start-intentet på ældre Android-versioner uden root skal du først aktivere ADB over TCP ved at køre %1$s fra en pc.</string>
+    <string name="home_automation_label_action">Handling</string>
+    <string name="home_automation_label_package">Pakke</string>
+    <string name="home_automation_label_target">Mål</string>
+    <string name="home_automation_label_extras">Ekstra (Godkendelsestoken)</string>
+    <string name="home_automation_label_shell">Shell- / Termux-kommando</string>
+    <string name="home_automation_regenerate_token">Gendan token</string>
+    <string name="home_automation_regenerate_token_confirm">Er du sikker på, at du vil genoprette tokenet? Eventuelle konfigurerede intents skal opdateres med det nye token.</string>
+    <string name="automation_security_group_title">Godkendelse og sikkerhed</string>
+    <string name="automation_security_description">Direkte broadcast-intents kræver denne hemmelige godkendelsestoken sendt som \'auth\'-ekstra (-e auth &lt;token&gt;). Dette beskytter Shevery mod uautoriserede apps.</string>
+    <string name="automation_regenerate_token_summary">Generer et nyt hemmeligt token og gør det eksisterende ugyldigt</string>
+    <string name="automation_target_component_label">Modtagerkomponent</string>
+    <string name="home_automation_connectors_disabled_status">Konnektorer deaktiveret (Intents inaktive)</string>
+    <string name="home_automation_connectors_active">Konnektorer aktive</string>
+    <string name="home_automation_connectors_active_desc">Indgående broadcast-intents accepteres.</string>
+    <string name="home_automation_open_settings">Åbn automatiseringsindstillinger</string>
+
+    <!-- Automation Alert Notifications -->
+    <string name="notification_channel_automation_alerts">Automatiseringsadvarsler</string>
+    <string name="notification_auth_missing_title">Godkendelsestoken påkrævet</string>
+    <string name="notification_auth_missing_message">Tilføj extra “auth” til din intent. Du kan finde dit token under Indstillinger → Automatisering.</string>
+    <string name="notification_auth_invalid_title">Ugyldigt godkendelsestoken</string>
+    <string name="notification_auth_invalid_message">Sørg for, at tokenet i din intent matcher det i Shevery Indstillinger.</string>
+    <string name="notification_connectors_disabled_title">Automatiseringsstik deaktiveret</string>
+    <string name="notification_connectors_disabled_message">En automatiseringsintent blev blokeret, fordi Shevery-stik er deaktiveret i Indstillinger. Tryk for at aktivere.</string>
 </resources>

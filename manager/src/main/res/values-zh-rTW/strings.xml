@@ -275,6 +275,8 @@
     <string name="notification_watchdog_text"><![CDATA[Shevery 服務意外停止。]]></string>
     <string name="watchdog_service_title"><![CDATA[Shevery 看門狗已啟用]]></string>
     <string name="watchdog_service_text"><![CDATA[正在監視 Shevery 服務以實現保活恢復]]></string>
+    <string name="watchdog_action_turn_off"><![CDATA[關閉]]></string>
+    <string name="watchdog_action_channel_settings"><![CDATA[關閉警報]]></string>
     <string name="notification_control_channel_name"><![CDATA[Shevery 控制]]></string>
     <string name="notification_control_title_running"><![CDATA[Shevery 正在執行]]></string>
     <string name="notification_control_title_stopped"><![CDATA[Shevery 已停止]]></string>
@@ -443,7 +445,7 @@
     <string name="diagnostics_limited"><![CDATA[受限]]></string>
     <string name="diagnostics_unknown"><![CDATA[未知]]></string>
     <string name="error_protect_title"><![CDATA[錯誤保護]]></string>
-    <string name="error_protect_summary"><![CDATA[每 10 秒檢查處理程序健康狀態與事務錯誤。若發現異常自動停止並重啟 Shevery。]]></string>
+    <string name="error_protect_summary"><![CDATA[響應式監測服務健康狀態。若發現異常或崩潰自動重啟 Shevery。]]></string>
     <string name="settings_tcp_5555_title"><![CDATA[繫結 TCP 5555]]></string>
     <string name="settings_tcp_5555_summary"><![CDATA[將本地 ADB 服務繫結至 5555 連接埠，無需無線偵錯連接埠變動即可保持連接。]]></string>
     <string name="settings_tcp_5555_button"><![CDATA[繫結至 5555]]></string>
@@ -563,4 +565,61 @@
     <string name="tcp_prompt_dialog_enable"><![CDATA[使能夠]]></string>
     <string name="tcp_prompt_dialog_later"><![CDATA[現在不要]]></string>
     <string name="tcp_prompt_dialog_do_not_remind"><![CDATA[不要再提醒我]]></string>
+
+    <!-- Automation (Tasker / MacroDroid) -->
+    <string name="automation_settings_title"><![CDATA[自動化]]></string>
+    <string name="automation_section_summary"><![CDATA[Tasker、MacroDroid 與廣播 Intent]]></string>
+    <string name="automation_tasker_macrodroid_title"><![CDATA[Tasker 與 MacroDroid]]></string>
+    <string name="automation_dialog_description"><![CDATA[透過內建外掛程式或明確廣播 Intent 使用 Tasker 或 MacroDroid 控制 Shevery。輕觸以複製。]]></string>
+    <string name="automation_dialog_actions_header"><![CDATA[廣播動作]]></string>
+    <string name="automation_dialog_target_header"><![CDATA[目標套件名稱]]></string>
+    <string name="automation_copied_to_clipboard"><![CDATA[已複製到剪貼簿]]></string>
+    <string name="automation_package_label"><![CDATA[套件名稱]]></string>
+    <string name="automation_action_start"><![CDATA[啟動伺服器]]></string>
+    <string name="automation_action_stop"><![CDATA[停止伺服器]]></string>
+    <string name="automation_action_restart"><![CDATA[重新啟動伺服器]]></string>
+    <string name="automation_action_toggle"><![CDATA[切換伺服器狀態]]></string>
+    <string name="automation_plugin_method_title"><![CDATA[Tasker / Locale 外掛程式]]></string>
+    <string name="automation_plugin_method_summary"><![CDATA[Tasker 與 MacroDroid 中的整合動作與狀態條件外掛程式]]></string>
+
+    <!-- Backups, Extras & Classic Nav -->
+    <string name="settings_backups_title"><![CDATA[備份]]></string>
+    <string name="settings_section_backups_summary"><![CDATA[備份與還原設定]]></string>
+    <string name="settings_extras_title"><![CDATA[附加功能]]></string>
+    <string name="settings_section_extras_summary"><![CDATA[無障礙、診斷與實驗性功能]]></string>
+    <string name="settings_classic_nav"><![CDATA[傳統底欄導航]]></string>
+    <string name="settings_classic_nav_summary"><![CDATA[使用傳統固定底欄替代懸浮膠囊]]></string>
+
+    <!-- Home - Automation -->
+    <string name="home_automation_title">使用自動化應用程式控制 Shevery</string>
+    <string name="home_automation_description">Tasker 和 MacroDroid 等應用程式可發送 Intent 自動啟動、停止、重新啟動或切換 Shevery。</string>
+    <string name="home_automation_button_view_intents">查看 Intent</string>
+    <string name="home_automation_bottom_sheet_intents">自動化 Intent</string>
+    <string name="home_automation_bottom_sheet_description">在 Tasker 或 MacroDroid 中設定 Intent，或直接從 Termux / ADB 執行命令。輕觸任意欄位即可複製。</string>
+    <string name="home_automation_connectors_disabled_warning">連接器目前已停用。請在「設定 → 自動化」中啟用以允許接收廣播 Intent。</string>
+    <string name="home_automation_device_restriction">在較舊的 Android 版本且無 Root 權限下使用啟動 Intent，需要先在電腦上執行 %1$s 開啟 TCP 偵錯。</string>
+    <string name="home_automation_label_action">動作</string>
+    <string name="home_automation_label_package">套件名稱</string>
+    <string name="home_automation_label_target">目標元件</string>
+    <string name="home_automation_label_extras">附加參數 (驗證權杖)</string>
+    <string name="home_automation_label_shell">Shell / Termux 命令</string>
+    <string name="home_automation_regenerate_token">重新產生權杖</string>
+    <string name="home_automation_regenerate_token_confirm">確定要重新產生權杖嗎？所有已設定的 Tasker 或 MacroDroid Intent 都需要更新為新權杖。</string>
+    <string name="automation_security_group_title">驗證與安全性</string>
+    <string name="automation_security_description">直接廣播 Intent 需要透過 \'auth\' 參數 (-e auth &lt;token&gt;) 傳遞此秘密驗證權杖，以防止未經授權的應用程式控制 Shevery。</string>
+    <string name="automation_regenerate_token_summary">產生新的秘密權杖並使現有權杖失效</string>
+    <string name="automation_target_component_label">接收器元件</string>
+    <string name="home_automation_connectors_disabled_status">連接器已停用 (Intent 未啟用)</string>
+    <string name="home_automation_connectors_active">連接器已啟用</string>
+    <string name="home_automation_connectors_active_desc">將正常接收傳入的廣播 Intent。</string>
+    <string name="home_automation_open_settings">開啟自動化設定</string>
+
+    <!-- Automation Alert Notifications -->
+    <string name="notification_channel_automation_alerts">自動化提醒</string>
+    <string name="notification_auth_missing_title">需要驗證權杖</string>
+    <string name="notification_auth_missing_message">請在 Intent 中新增「auth」Extra。您可以在「設定 → 自動化」中找到您的權杖。</string>
+    <string name="notification_auth_invalid_title">驗證權杖無效</string>
+    <string name="notification_auth_invalid_message">請確認 Intent 中的權杖與 Shevery 設定中的權杖相符。</string>
+    <string name="notification_connectors_disabled_title">自動化連接器已停用</string>
+    <string name="notification_connectors_disabled_message">自動化 Intent 已被封鎖，因為 Shevery 連接器在設定中已停用。輕觸以啟用。</string>
 </resources>

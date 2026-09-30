@@ -266,6 +266,8 @@
     <string name="notification_watchdog_text"><![CDATA[سرویس Shevery به‌طور غیرمنتظره متوقف شد.]]></string>
     <string name="watchdog_service_title"><![CDATA[نگهبان Shevery فعال است]]></string>
     <string name="watchdog_service_text"><![CDATA[در حال نظارت بر سرویس Shevery برای بازیابی]]></string>
+    <string name="watchdog_action_turn_off"><![CDATA[خاموش کردن]]></string>
+    <string name="watchdog_action_channel_settings"><![CDATA[غیرفعال کردن هشدارها]]></string>
     <string name="notification_control_channel_name"><![CDATA[کنترل Shevery]]></string>
     <string name="notification_control_title_running"><![CDATA[Shevery در حال اجراست]]></string>
     <string name="notification_control_title_stopped"><![CDATA[Shevery متوقف شده]]></string>
@@ -429,7 +431,7 @@
     <string name="diagnostics_limited"><![CDATA[محدود]]></string>
     <string name="diagnostics_unknown"><![CDATA[ناشناخته]]></string>
     <string name="error_protect_title"><![CDATA[ErrorProtect]]></string>
-    <string name="error_protect_summary"><![CDATA[هر ۱۰ ثانیه یکبار سلامت فرآیند و خطاهای تراکنش را بررسی می‌کند. اگر مشکلی یافت شود، Shevery را به‌صورت خودکار متوقف کرده و مجدداً راه‌اندازی می‌کند.]]></string>
+    <string name="error_protect_summary"><![CDATA[نظارت واکنشی بر سلامت سرویس. در صورت تشخیص مشکل یا توقف غیرمنتظره، Shevery را به‌طور خودکار بازنشانی می‌کند.]]></string>
     <string name="settings_tcp_5555_title"><![CDATA[اتصال TCP 5555]]></string>
     <string name="settings_tcp_5555_summary"><![CDATA[اتصال سرور ADB محلی به پورت ۵۵۵۵ برای ادامه کار بدون به‌روزرسانی پورت اشکال‌زدایی بی‌سیم.]]></string>
     <string name="settings_tcp_5555_button"><![CDATA[اتصال به ۵۵۵۵]]></string>
@@ -549,4 +551,61 @@
     <string name="tcp_prompt_dialog_enable"><![CDATA[فعال کردن]]></string>
     <string name="tcp_prompt_dialog_later"><![CDATA[نه در حال حاضر]]></string>
     <string name="tcp_prompt_dialog_do_not_remind"><![CDATA[دیگه یادم نینداز]]></string>
+
+    <!-- Automation (Tasker / MacroDroid) -->
+    <string name="automation_settings_title"><![CDATA[اتوماسیون]]></string>
+    <string name="automation_section_summary"><![CDATA[تاسکر، ماکرو دروید و مقاصد پخش]]></string>
+    <string name="automation_tasker_macrodroid_title"><![CDATA[Tasker و MacroDroid]]></string>
+    <string name="automation_dialog_description"><![CDATA[برنامه Shevery را با استفاده از افزونه داخلی یا ارسال مستقیم مقاصد پخش با Tasker یا MacroDroid کنترل کنید. برای کپی ضربه بزنید.]]></string>
+    <string name="automation_dialog_actions_header"><![CDATA[اقدامات پخش]]></string>
+    <string name="automation_dialog_target_header"><![CDATA[بسته هدف]]></string>
+    <string name="automation_copied_to_clipboard"><![CDATA[در کلیپ بورد کپی شد]]></string>
+    <string name="automation_package_label"><![CDATA[بسته]]></string>
+    <string name="automation_action_start"><![CDATA[شروع سرور]]></string>
+    <string name="automation_action_stop"><![CDATA[توقف سرور]]></string>
+    <string name="automation_action_restart"><![CDATA[راه‌اندازی مجدد سرور]]></string>
+    <string name="automation_action_toggle"><![CDATA[تغییر وضعیت سرور]]></string>
+    <string name="automation_plugin_method_title"><![CDATA[افزونه Tasker / Locale]]></string>
+    <string name="automation_plugin_method_summary"><![CDATA[افزونه یکپارچه اقدام و شرط وضعیت در Tasker و MacroDroid]]></string>
+
+    <!-- Backups, Extras & Classic Nav -->
+    <string name="settings_backups_title"><![CDATA[Backups]]></string>
+    <string name="settings_section_backups_summary"><![CDATA[Backup and restore settings]]></string>
+    <string name="settings_extras_title"><![CDATA[Extras]]></string>
+    <string name="settings_section_extras_summary"><![CDATA[Accessibility, diagnostics, and experiments]]></string>
+    <string name="settings_classic_nav"><![CDATA[Classic navigation bar]]></string>
+    <string name="settings_classic_nav_summary"><![CDATA[Use a fixed bottom bar instead of the floating pill]]></string>
+
+    <!-- Home - Automation -->
+    <string name="home_automation_title">کنترل Shevery با برنامه‌های اتوماسیون</string>
+    <string name="home_automation_description">برنامه‌هایی مانند Tasker و MacroDroid می‌توانند اینتنت‌هایی برای شروع، توقف، راه‌اندازی مجدد یا تغییر وضعیت Shevery ارسال کنند.</string>
+    <string name="home_automation_button_view_intents">مشاهده اینتنت‌ها</string>
+    <string name="home_automation_bottom_sheet_intents">اینتنت‌های اتوماسیون</string>
+    <string name="home_automation_bottom_sheet_description">اینتنت‌ها را در Tasker یا MacroDroid تنظیم کنید یا دستور را مستقیماً از Termux / ADB اجرا کنید. برای کپی ضربه بزنید.</string>
+    <string name="home_automation_connectors_disabled_warning">اتصال‌دهنده‌ها در حال حاضر غیرفعال هستند. برای اجازه دادن به اینتنت‌های دریافتی، آن‌ها را در تنظیمات ← اتوماسیون فعال کنید.</string>
+    <string name="home_automation_device_restriction">برای استفاده از اینتنت شروع در نسخه‌های قدیمی‌تر اندروید بدون روت، ابتدا باید با اجرای %1$s از رایانه، ADB از طریق TCP را فعال کنید.</string>
+    <string name="home_automation_label_action">عملیات</string>
+    <string name="home_automation_label_package">بسته</string>
+    <string name="home_automation_label_target">هدف</string>
+    <string name="home_automation_label_extras">موارد اضافی (توکن احراز هویت)</string>
+    <string name="home_automation_label_shell">دستور Shell / Termux</string>
+    <string name="home_automation_regenerate_token">تولید مجدد توکن</string>
+    <string name="home_automation_regenerate_token_confirm">آیا مطمئن هستید که می‌خواهید توکن را مجدداً ایجاد کنید؟ هر اینتنت پیکربندی‌شده در Tasker یا MacroDroid باید با توکن جدید به‌روزرسانی شود.</string>
+    <string name="automation_security_group_title">احراز هویت و امنیت</string>
+    <string name="automation_security_description">اینتنت‌های پخش مستقیم نیازمند انتقال این توکن مخفی به عنوان ویژگی \'auth\' هستند (-e auth &lt;token&gt;). این امر Shevery را در برابر برنامه‌های غیرمجاز محافظت می‌کند.</string>
+    <string name="automation_regenerate_token_summary">ایجاد یک توکن مخفی جدید و باطل کردن توکن فعلی</string>
+    <string name="automation_target_component_label">مؤلفه گیرنده</string>
+    <string name="home_automation_connectors_disabled_status">اتصال‌دهنده‌ها غیرفعال هستند (اینتنت‌ها غیرفعال)</string>
+    <string name="home_automation_connectors_active">اتصال‌دهنده‌ها فعال هستند</string>
+    <string name="home_automation_connectors_active_desc">اینتنت‌های دریافتی پذیرفته خواهند شد.</string>
+    <string name="home_automation_open_settings">باز کردن تنظیمات اتوماسیون</string>
+
+    <!-- Automation Alert Notifications -->
+    <string name="notification_channel_automation_alerts">اتوماسیون Alerts</string>
+    <string name="notification_auth_missing_title">Auth token required</string>
+    <string name="notification_auth_missing_message">Add the “auth” extra to your intent. You can find your token under تنظیمات → اتوماسیون.</string>
+    <string name="notification_auth_invalid_title">Invalid auth token</string>
+    <string name="notification_auth_invalid_message">Make sure the token in your intent matches the one in Shevery تنظیمات.</string>
+    <string name="notification_connectors_disabled_title">اتوماسیون connectors disabled</string>
+    <string name="notification_connectors_disabled_message">An automation intent was blocked because Shevery connectors are disabled in تنظیمات. Tap to enable.</string>
 </resources>

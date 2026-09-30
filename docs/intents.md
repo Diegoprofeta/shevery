@@ -27,7 +27,29 @@ val intent = Intent("moe.shizuku.manager.action.START_SERVER").apply {
 context.sendBroadcast(intent)
 ```
 
-> `adb shell am broadcast` with these actions will **not** work from the shell because the receiver is not exported — this is intentional, so random apps can't toggle your server.
+> `adb shell am broadcast` with these internal actions will **not** work from the shell because `SheveryControlReceiver` is not exported. For shell/ADB or third-party automation, use the public broadcast actions below.
+
+## Public automation control (Tasker, MacroDroid, ADB)
+
+Receiver: `com.hamondev.shevery.tasker.PluginReceiver` (`exported=true`).
+
+| Action | Effect |
+|---|---|
+| `com.hamondev.shevery.action.START_SERVER` | Starts Shevery server (clears stop flag, wakes watchdog) |
+| `com.hamondev.shevery.action.STOP_SERVER` | Gracefully stops the server |
+| `com.hamondev.shevery.action.RESTART_SERVER` | Restarts server with graceful binder death monitor |
+| `com.hamondev.shevery.action.TOGGLE_SERVER` | Toggles server (stops if alive, starts if stopped) |
+
+Example shell usage:
+```bash
+adb shell am broadcast -a com.hamondev.shevery.action.START_SERVER -p com.hamondev.shevery -e auth <token>
+```
+
+> **Requirement**: Third-party automation broadcasts and the Tasker plugin require **Shevery Connectors** to be enabled in **Settings → Automation** (`shizuku_connector_enabled`).
+> 
+> **Authentication Token**: Direct broadcasts require the secret auth token (`-e auth <token>`) configured in Shevery (accessible via the Home screen **View intents** sheet). If missing or invalid, broadcasts are rejected with `RESULT_CANCELED`.
+
+Detailed guide: [Tasker & MacroDroid Automation Guide](tasker-plugin.md).
 
 ## App update status (internal)
 

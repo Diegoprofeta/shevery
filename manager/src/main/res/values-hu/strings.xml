@@ -295,6 +295,8 @@ Az export funkció SAF-et használ (Storage Access Framework). A jelentések sze
     <string name="notification_watchdog_text"><![CDATA[A Shevery szolgáltatás váratlanul leállt.]]></string>
     <string name="watchdog_service_title"><![CDATA[A Shevery felügyelő rendszer aktív]]></string>
     <string name="watchdog_service_text"><![CDATA[A Shevery szolgáltatás figyelése a keep-alive-helyreállítás érdekében]]></string>
+    <string name="watchdog_action_turn_off"><![CDATA[Kikapcsolás]]></string>
+    <string name="watchdog_action_channel_settings"><![CDATA[Értesítések kikapcsolása]]></string>
     <string name="notification_control_channel_name"><![CDATA[Shevery vezérlés]]></string>
     <string name="notification_startup_channel_name">Shevery startup</string>
     <string name="notification_startup_title"><![CDATA[Shevery kezdése]]></string>
@@ -513,7 +515,7 @@ Készen áll a parancsok fogadására.]]></string>
     <string name="diagnostics_limited"><![CDATA[korlátozott]]></string>
     <string name="diagnostics_unknown"><![CDATA[ismeretlen]]></string>
     <string name="error_protect_title"><![CDATA[ErrorProtect]]></string>
-    <string name="error_protect_summary"><![CDATA[10 másodpercenként ellenőrizze a folyamat állapotát és a tranzakciós hibákat. Ha problémát észlel, a rendszer automatikusan leállítja és újraindítja a Shevery-t.]]></string>
+    <string name="error_protect_summary"><![CDATA[Reaktívan figyeli a szolgáltatás állapotát. Probléma vagy összeomlás észlelésekor automatikusan újraindítja a Shevery-t.]]></string>
     <string name="settings_tcp_5555_title"><![CDATA[TCP-kapcsolódás 5555]]></string>
     <string name="settings_tcp_5555_summary"><![CDATA[Kössük az ADB-kiszolgálót az 5555-ös porthoz, hogy a vezeték nélküli hibakeresési port frissítései nélkül is működőképes maradjon.]]></string>
     <string name="settings_tcp_5555_button"><![CDATA[Kapcsolódás az 5555-ös számhoz]]></string>
@@ -559,4 +561,61 @@ Készen áll a parancsok fogadására.]]></string>
     <string name="tcp_prompt_dialog_enable"><![CDATA[Engedélyezés]]></string>
     <string name="tcp_prompt_dialog_later"><![CDATA[Most nem]]></string>
     <string name="tcp_prompt_dialog_do_not_remind"><![CDATA[Ne emlékeztess többé]]></string>
+
+    <!-- Automation (Tasker / MacroDroid) -->
+    <string name="automation_settings_title"><![CDATA[Automatizálás]]></string>
+    <string name="automation_section_summary"><![CDATA[Tasker, MacroDroid és broadcast szándékok]]></string>
+    <string name="automation_tasker_macrodroid_title"><![CDATA[Tasker & MacroDroid]]></string>
+    <string name="automation_dialog_description"><![CDATA[Irányítsa a Shevery-t Tasker vagy MacroDroid segítségével a beépített bővítményen vagy közvetlen broadcast szándékokon keresztül. Érintse meg a másoláshoz.]]></string>
+    <string name="automation_dialog_actions_header"><![CDATA[Broadcast műveletek]]></string>
+    <string name="automation_dialog_target_header"><![CDATA[Célcsomag]]></string>
+    <string name="automation_copied_to_clipboard"><![CDATA[Másolva a vágólapra]]></string>
+    <string name="automation_package_label"><![CDATA[Csomag]]></string>
+    <string name="automation_action_start"><![CDATA[Kiszolgáló indítása]]></string>
+    <string name="automation_action_stop"><![CDATA[Kiszolgáló leállítása]]></string>
+    <string name="automation_action_restart"><![CDATA[Kiszolgáló újraindítása]]></string>
+    <string name="automation_action_toggle"><![CDATA[Kiszolgáló váltása]]></string>
+    <string name="automation_plugin_method_title"><![CDATA[Tasker / Locale bővítmény]]></string>
+    <string name="automation_plugin_method_summary"><![CDATA[Integrált művelet és állapotfeltétel bővítmény Tasker és MacroDroid alá]]></string>
+
+    <!-- Backups, Extras & Classic Nav -->
+    <string name="settings_backups_title"><![CDATA[Backups]]></string>
+    <string name="settings_section_backups_summary"><![CDATA[Backup and restore settings]]></string>
+    <string name="settings_extras_title"><![CDATA[Extras]]></string>
+    <string name="settings_section_extras_summary"><![CDATA[Accessibility, diagnostics, and experiments]]></string>
+    <string name="settings_classic_nav"><![CDATA[Classic navigation bar]]></string>
+    <string name="settings_classic_nav_summary"><![CDATA[Use a fixed bottom bar instead of the floating pill]]></string>
+
+    <!-- Home - Automation -->
+    <string name="home_automation_title">Shevery vezérlése automatizálási alkalmazásokkal</string>
+    <string name="home_automation_description">Az olyan alkalmazások, mint a Tasker és a MacroDroid, intenteket küldhetnek a Shevery automatikus indításához, leállításához, újraindításához vagy átváltásához.</string>
+    <string name="home_automation_button_view_intents">Intentek megtekintése</string>
+    <string name="home_automation_bottom_sheet_intents">Automatizálási intentek</string>
+    <string name="home_automation_bottom_sheet_description">Konfigurálja az intenteket a Taskerben vagy a MacroDroidban, vagy futtassa a parancsot közvetlenül a Termux / ADB környezetből. Érintse meg a másoláshoz.</string>
+    <string name="home_automation_connectors_disabled_warning">A csatlakozók jelenleg le vannak tiltva. Engedélyezze őket a Beállítások → Automatizálás menüben a bejövő broadcast intentek fogadásához.</string>
+    <string name="home_automation_device_restriction">Az indítási intent régebbi, root nélküli Android verziókon való használatához először engedélyeznie kell az ADB over TCP protokollt a %1$s parancs számítógépről történő futtatásával.</string>
+    <string name="home_automation_label_action">Művelet</string>
+    <string name="home_automation_label_package">Csomag</string>
+    <string name="home_automation_label_target">Cél</string>
+    <string name="home_automation_label_extras">Extrák (Hitelesítési token)</string>
+    <string name="home_automation_label_shell">Shell / Termux parancs</string>
+    <string name="home_automation_regenerate_token">Token újragenerálása</string>
+    <string name="home_automation_regenerate_token_confirm">Biztosan újragenerálja a tokent? A beállított Tasker vagy MacroDroid intenteket frissíteni kell az új tokennel.</string>
+    <string name="automation_security_group_title">Hitelesítés és biztonság</string>
+    <string name="automation_security_description">A közvetlen broadcast intentek megkövetelik ennek a titkos hitelesítési tokennek a megadását \'auth\' extraként (-e auth &lt;token&gt;). Ez megvédi a Sheveryt az illetéktelen alkalmazásoktól.</string>
+    <string name="automation_regenerate_token_summary">Új titkos token generálása és a meglévő érvénytelenítése</string>
+    <string name="automation_target_component_label">Vevő komponens</string>
+    <string name="home_automation_connectors_disabled_status">Csatlakozók letiltva (Intentek inaktívak)</string>
+    <string name="home_automation_connectors_active">Csatlakozók aktívak</string>
+    <string name="home_automation_connectors_active_desc">A bejövő broadcast intentek fogadásra kerülnek.</string>
+    <string name="home_automation_open_settings">Automatizálási beállítások megnyitása</string>
+
+    <!-- Automation Alert Notifications -->
+    <string name="notification_channel_automation_alerts">Automatizálási figyelmeztetések</string>
+    <string name="notification_auth_missing_title">Hitelesítési token szükséges</string>
+    <string name="notification_auth_missing_message">Adja hozzá az “auth” extrát az intenthez. A tokent a Beállítások → Automatizálás menüpontban találja.</string>
+    <string name="notification_auth_invalid_title">Érvénytelen hitelesítési token</string>
+    <string name="notification_auth_invalid_message">Győződjön meg arról, hogy az intentben lévő token megegyezik a Shevery beállításaiban szereplővel.</string>
+    <string name="notification_connectors_disabled_title">Automatizálási összekötők letiltva</string>
+    <string name="notification_connectors_disabled_message">Egy automatizálási intent blokkolva lett, mert a Shevery összekötők le vannak tiltva a Beállításokban. Koppintson az engedélyezéshez.</string>
 </resources>

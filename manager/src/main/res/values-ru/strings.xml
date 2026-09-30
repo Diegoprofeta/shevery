@@ -9,7 +9,9 @@
     <string name="dialog_cannot_open_browser_title"><![CDATA[Не удается запустить браузер]]></string>
     <string name="start_with_root_failed"><![CDATA[Не удалось запустить службу. Root права не выданы или они недоступны на устройстве.]]></string>
     <string name="starter"><![CDATA[Запуск]]></string>
-    <string name="permission_label"><![CDATA[доступ Shevery]]></string>
+    <string name="permission_label"><![CDATA[доступ к Shevery]]></string>
+    <string name="dhizuku_permission_label"><![CDATA[доступ к правам владельца устройства]]></string>
+    <string name="dhizuku_permission_group_description" translatable="false">@string/dhizuku_permission_label</string>
     <string name="notification_working"><![CDATA[Работает…]]></string>
     <string name="notification_service_start_no_root"><![CDATA[Не удалось запросить root права.]]></string>
     <string name="notification_service_start_failed"><![CDATA[Не удалось запустить службу Shevery.]]></string>
@@ -106,7 +108,8 @@
     <string name="wadb_notification_channel"><![CDATA[Служба автоматического запуска ADB]]></string>
     <string name="wadb_notification_attempt_now"><![CDATA[Попробуй сейчас]]></string>
     <string name="grant_dialog_button_allow_always"><![CDATA[Разрешить всегда]]></string>
-    <string name="grant_dialog_button_deny"><![CDATA[Запретить]]></string>
+    <string name="grant_dialog_button_allow_once"><![CDATA[Только в этот раз]]></string>
+    <string name="grant_dialog_button_deny"><![CDATA[Отклонить]]></string>
     <string name="permission_warning_template"><![CDATA[Разрешить <b>%1$s</b> следующее: %2$s?]]></string>
     <string name="home_root_description_sui"><![CDATA[Если вы пользуетесь Magisk, можете попробовать %1$s. Для пользователей с root правами он в конечном итоге заменит Shevery. Обратите внимание, что в уже вышедшие приложения должны внести небольшие изменения, чтобы они заработали с %2$s.]]></string>
     <string name="permission_description"><![CDATA[Разрешить приложению использовать Shevery.]]></string>
@@ -381,6 +384,8 @@
     <string name="settings_tcp_5555_bind_failed_generic"><![CDATA[Требуются root-права, Dhizuku или запущенная Shevery.]]></string>
     <string name="watchdog_service_title"><![CDATA[Сторож Shevery активен]]></string>
     <string name="watchdog_service_text"><![CDATA[Наблюдение за службой Shevery для восстановления keep-alive]]></string>
+    <string name="watchdog_action_turn_off"><![CDATA[Отключить]]></string>
+    <string name="watchdog_action_channel_settings"><![CDATA[Отключить оповещения]]></string>
     <string name="diagnostics_app"><![CDATA[Приложение]]></string>
     <string name="diagnostics_android"><![CDATA[Андроид]]></string>
     <string name="diagnostics_service"><![CDATA[Служба]]></string>
@@ -399,7 +404,7 @@
     <string name="diagnostics_limited"><![CDATA[ограничено]]></string>
     <string name="diagnostics_unknown"><![CDATA[неизвестно]]></string>
     <string name="error_protect_title"><![CDATA[Защита от ошибок]]></string>
-    <string name="error_protect_summary"><![CDATA[Проверять работоспособность процессов и транзакционные ошибки каждые 10 секунд. Автоматически останавливает и перезапускает Shevery при обнаружении проблем.]]></string>
+    <string name="error_protect_summary"><![CDATA[Реактивно отслеживает состояние службы. Автоматически перезапускает Shevery при обнаружении проблем или сбоев.]]></string>
     <string name="backup_restore_title"><![CDATA[Резервное копирование и восстановление]]></string>
     <string name="backup_title"><![CDATA[Резервная копия настроек и модулей]]></string>
     <string name="backup_summary"><![CDATA[Экспортировать конфигурацию и модули в ZIP-файл]]></string>
@@ -558,4 +563,61 @@
     <string name="tcp_prompt_dialog_enable"><![CDATA[Давать возможность]]></string>
     <string name="tcp_prompt_dialog_later"><![CDATA[Не сейчас]]></string>
     <string name="tcp_prompt_dialog_do_not_remind"><![CDATA[Не напоминай мне больше]]></string>
+
+    <!-- Automation (Tasker / MacroDroid) -->
+    <string name="automation_settings_title"><![CDATA[Автоматизация]]></string>
+    <string name="automation_section_summary"><![CDATA[Tasker, MacroDroid и broadcast-интенты]]></string>
+    <string name="automation_tasker_macrodroid_title"><![CDATA[Tasker и MacroDroid]]></string>
+    <string name="automation_dialog_description"><![CDATA[Управляйте Shevery через Tasker или MacroDroid с помощью встроенного плагина или отправки broadcast-интентов. Нажмите на элемент для копирования.]]></string>
+    <string name="automation_dialog_actions_header"><![CDATA[Broadcast-действия]]></string>
+    <string name="automation_dialog_target_header"><![CDATA[Целевой пакет]]></string>
+    <string name="automation_copied_to_clipboard"><![CDATA[Скопировано в буфер обмена]]></string>
+    <string name="automation_package_label"><![CDATA[Пакет]]></string>
+    <string name="automation_action_start"><![CDATA[Запуск сервера]]></string>
+    <string name="automation_action_stop"><![CDATA[Остановка сервера]]></string>
+    <string name="automation_action_restart"><![CDATA[Перезапуск сервера]]></string>
+    <string name="automation_action_toggle"><![CDATA[Переключение сервера]]></string>
+    <string name="automation_plugin_method_title"><![CDATA[Плагин Tasker / Locale]]></string>
+    <string name="automation_plugin_method_summary"><![CDATA[Встроенный плагин действий и условий состояния для Tasker и MacroDroid]]></string>
+
+    <!-- Backups, Extras & Classic Nav -->
+    <string name="settings_backups_title"><![CDATA[Бэкапы]]></string>
+    <string name="settings_section_backups_summary"><![CDATA[Резервное копирование и восстановление настроек]]></string>
+    <string name="settings_extras_title"><![CDATA[Дополнительно]]></string>
+    <string name="settings_section_extras_summary"><![CDATA[Специальные возможности, диагностика и эксперименты]]></string>
+    <string name="settings_classic_nav"><![CDATA[Классическая панель навигации]]></string>
+    <string name="settings_classic_nav_summary"><![CDATA[Использовать фиксированную нижнюю панель вместо плавающей капсулы]]></string>
+
+    <!-- Home - Automation -->
+    <string name="home_automation_title">Управление Shevery через автоматизацию</string>
+    <string name="home_automation_description">Приложения вроде Tasker и MacroDroid могут отправлять интенты для автоматического запуска, остановки, перезапуска или переключения Shevery.</string>
+    <string name="home_automation_button_view_intents">Просмотр интентов</string>
+    <string name="home_automation_bottom_sheet_intents">Интенты автоматизации</string>
+    <string name="home_automation_bottom_sheet_description">Настройте интенты в Tasker или MacroDroid либо выполните команду напрямую из Termux / ADB. Нажмите для копирования.</string>
+    <string name="home_automation_connectors_disabled_warning">Коннекторы отключены. Включите их в меню «Настройки → Автоматизация», чтобы разрешить входящие broadcast-интенты.</string>
+    <string name="home_automation_device_restriction">Чтобы использовать интент запуска на старых версиях Android без root, сначала включите ADB по TCP, выполнив %1$s с ПК.</string>
+    <string name="home_automation_label_action">Действие</string>
+    <string name="home_automation_label_package">Пакет</string>
+    <string name="home_automation_label_target">Целевой компонент</string>
+    <string name="home_automation_label_extras">Extras (Токен авторизации)</string>
+    <string name="home_automation_label_shell">Команда Shell / Termux</string>
+    <string name="home_automation_regenerate_token">Перегенерировать токен</string>
+    <string name="home_automation_regenerate_token_confirm">Вы уверены, что хотите перегенерировать токен? Все настроенные интенты в Tasker или MacroDroid потребуется обновить.</string>
+    <string name="automation_security_group_title">Аутентификация и безопасность</string>
+    <string name="automation_security_description">Прямые broadcast-интенты требуют передачи секретного токена через параметр \'auth\' (-e auth &lt;token&gt;). Это защищает Shevery от несанкционированных приложений.</string>
+    <string name="automation_regenerate_token_summary">Сгенерировать новый секретный токен и аннулировать текущий</string>
+    <string name="automation_target_component_label">Компонент приемника</string>
+    <string name="home_automation_connectors_disabled_status">Коннекторы отключены (интенты неактивны)</string>
+    <string name="home_automation_connectors_active">Коннекторы активны</string>
+    <string name="home_automation_connectors_active_desc">Входящие broadcast-интенты будут приниматься.</string>
+    <string name="home_automation_open_settings">Открыть настройки автоматизации</string>
+
+    <!-- Automation Alert Notifications -->
+    <string name="notification_channel_automation_alerts">Оповещения автоматизации</string>
+    <string name="notification_auth_missing_title">Требуется токен аутентификации</string>
+    <string name="notification_auth_missing_message">Добавьте extra «auth» в ваш интент. Токен можно найти в меню «Настройки → Автоматизация».</string>
+    <string name="notification_auth_invalid_title">Недействительный токен аутентификации</string>
+    <string name="notification_auth_invalid_message">Убедитесь, что токен в интенте совпадает с токеном в настройках Shevery.</string>
+    <string name="notification_connectors_disabled_title">Коннекторы автоматизации отключены</string>
+    <string name="notification_connectors_disabled_message">Интент автоматизации заблокирован, так как коннекторы Shevery отключены в Настройках. Нажмите, чтобы включить.</string>
 </resources>

@@ -266,6 +266,8 @@ has been copied to clipboard.]]></string>
     <string name="notification_watchdog_text"><![CDATA[שירות Shevery נעצר באופן בלתי צפוי.]]></string>
     <string name="watchdog_service_title"><![CDATA[שומר Shevery פעיל]]></string>
     <string name="watchdog_service_text"><![CDATA[מנטר את שירות Shevery לשחזור]]></string>
+    <string name="watchdog_action_turn_off"><![CDATA[כיבוי]]></string>
+    <string name="watchdog_action_channel_settings"><![CDATA[כיבוי התראות]]></string>
     <string name="notification_control_channel_name"><![CDATA[שליטת Shevery]]></string>
     <string name="notification_control_title_running"><![CDATA[Shevery פועל]]></string>
     <string name="notification_control_title_stopped"><![CDATA[Shevery נעצר]]></string>
@@ -429,7 +431,7 @@ has been copied to clipboard.]]></string>
     <string name="diagnostics_limited"><![CDATA[מוגבל]]></string>
     <string name="diagnostics_unknown"><![CDATA[לא ידוע]]></string>
     <string name="error_protect_title"><![CDATA[ErrorProtect]]></string>
-    <string name="error_protect_summary"><![CDATA[בודק תקינות תהליך ושגיאות עסקאות כל 10 שניות. עוצר ומפעיל מחדש את Shevery אוטומטית אם מתגלות בעיות.]]></string>
+    <string name="error_protect_summary"><![CDATA[מנטר באופן תגובתי את תקינות השירות. מפעيل מחדש את Shevery באופן אוטומטי אם מזוהות תקלות או קריסות.]]></string>
     <string name="settings_tcp_5555_title"><![CDATA[כריכת TCP 5555]]></string>
     <string name="settings_tcp_5555_summary"><![CDATA[כרוך את שרת ADB המקומי ליציאה 5555 כדי להמשיך לפעול ללא עדכוני יציאת ניפוי בבאגים אלחוטי.]]></string>
     <string name="settings_tcp_5555_button"><![CDATA[כרוך ל-5555]]></string>
@@ -558,4 +560,61 @@ has been copied to clipboard.]]></string>
     <string name="tcp_prompt_dialog_enable"><![CDATA[לְאַפשֵׁר]]></string>
     <string name="tcp_prompt_dialog_later"><![CDATA[לא עכשיו]]></string>
     <string name="tcp_prompt_dialog_do_not_remind"><![CDATA[אל תזכיר לי שוב]]></string>
+
+    <!-- Automation (Tasker / MacroDroid) -->
+    <string name="automation_settings_title"><![CDATA[אוטומציה]]></string>
+    <string name="automation_section_summary"><![CDATA[טאסקר, מקרו דרואיד וכוונות שידור]]></string>
+    <string name="automation_tasker_macrodroid_title"><![CDATA[Tasker ו-MacroDroid]]></string>
+    <string name="automation_dialog_description"><![CDATA[שלוט ב-Shevery עם Tasker או MacroDroid באמצעות התוסף המובנה או שליחת כוונות שידור מפורשות. הקש כדי להעתיק.]]></string>
+    <string name="automation_dialog_actions_header"><![CDATA[פעולות שידור]]></string>
+    <string name="automation_dialog_target_header"><![CDATA[חבילת יעד]]></string>
+    <string name="automation_copied_to_clipboard"><![CDATA[הועתק ללוח]]></string>
+    <string name="automation_package_label"><![CDATA[חבילה]]></string>
+    <string name="automation_action_start"><![CDATA[הפעל שרת]]></string>
+    <string name="automation_action_stop"><![CDATA[עצור שרת]]></string>
+    <string name="automation_action_restart"><![CDATA[הפעל מחדש את השרת]]></string>
+    <string name="automation_action_toggle"><![CDATA[החלף מצב שרת]]></string>
+    <string name="automation_plugin_method_title"><![CDATA[תוסף Tasker / Locale]]></string>
+    <string name="automation_plugin_method_summary"><![CDATA[תוסף פעולה ותנאי מצב משולב ב-Tasker וב-MacroDroid]]></string>
+
+    <!-- Backups, Extras & Classic Nav -->
+    <string name="settings_backups_title"><![CDATA[Backups]]></string>
+    <string name="settings_section_backups_summary"><![CDATA[Backup and restore settings]]></string>
+    <string name="settings_extras_title"><![CDATA[Extras]]></string>
+    <string name="settings_section_extras_summary"><![CDATA[Accessibility, diagnostics, and experiments]]></string>
+    <string name="settings_classic_nav"><![CDATA[Classic navigation bar]]></string>
+    <string name="settings_classic_nav_summary"><![CDATA[Use a fixed bottom bar instead of the floating pill]]></string>
+
+    <!-- Home - Automation -->
+    <string name="home_automation_title">שליטה ב-Shevery באמצעות יישומי אוטומציה</string>
+    <string name="home_automation_description">יישומים כמו Tasker ו-MacroDroid יכולים לשלוח כוונות (intents) כדי להפעיל, לעצור, להפעיל מחדש או להחליף מצב של Shevery באופן אוטומטי.</string>
+    <string name="home_automation_button_view_intents">הצג כוונות</string>
+    <string name="home_automation_bottom_sheet_intents">כוונות אוטומציה</string>
+    <string name="home_automation_bottom_sheet_description">הגדר כוונות ב-Tasker או MacroDroid, או הפעל את הפקודה ישירות מ-Termux / ADB. הקש להעתקה.</string>
+    <string name="home_automation_connectors_disabled_warning">המחברים מושבתים כרגע. הפעל אותם בהגדרות ← אוטומציה כדי לאפשר כוונות שידור נכנסות.</string>
+    <string name="home_automation_device_restriction">כדי להשתמש בכוונת ההפעלה בגרסאות Android ישנות יותר ללא רוט, עליך להפעיל תחילה ADB על גבי TCP על ידי הפעלת %1$s ממחשב.</string>
+    <string name="home_automation_label_action">פעולה</string>
+    <string name="home_automation_label_package">חבילה</string>
+    <string name="home_automation_label_target">רכיב יעד</string>
+    <string name="home_automation_label_extras">תוספות (טוקן אימות)</string>
+    <string name="home_automation_label_shell">פקודת Shell / Termux</string>
+    <string name="home_automation_regenerate_token">יצירה מחדש של טוקן</string>
+    <string name="home_automation_regenerate_token_confirm">האם אתה בטוח שברצונך ליצור מחדש את הטוקן? יהיה צורך לעדכן כל כוונה מוגדרת ב-Tasker או MacroDroid בטוקן החדש.</string>
+    <string name="automation_security_group_title">אימות ואבטחה</string>
+    <string name="automation_security_description">כוונות שידור ישירות דורשות טוקן אימות סודי זה שיועבר כתוספת \'auth\' (-e auth &lt;token&gt;). פעולה זו מגנה על Shevery מפני יישומים לא מורשים.</string>
+    <string name="automation_regenerate_token_summary">צור טוקן סודי חדש ובטל את תקפותו של הקיים</string>
+    <string name="automation_target_component_label">רכיב מקלט</string>
+    <string name="home_automation_connectors_disabled_status">מחברים מושבתים (כוונות אינן פעילות)</string>
+    <string name="home_automation_connectors_active">מחברים פעילים</string>
+    <string name="home_automation_connectors_active_desc">כוונות שידור נכנסות יתקבלו.</string>
+    <string name="home_automation_open_settings">פתח הגדרות אוטומציה</string>
+
+    <!-- Automation Alert Notifications -->
+    <string name="notification_channel_automation_alerts">התראות אוטומציה</string>
+    <string name="notification_auth_missing_title">נדרש אסימון אימות</string>
+    <string name="notification_auth_missing_message">הוסף את תוספת ה-“auth” ל-intent שלך. תוכל למצוא את האסימון בהגדרות ← אוטומציה.</string>
+    <string name="notification_auth_invalid_title">אסימון אימות לא תקין</string>
+    <string name="notification_auth_invalid_message">ודא שהאסימון ב-intent תואם לאסימון בהגדרות Shevery.</string>
+    <string name="notification_connectors_disabled_title">מחברי האוטומציה מושבתים</string>
+    <string name="notification_connectors_disabled_message">Intent של אוטומציה נחסם מכיוון שמחברי Shevery מושבתים בהגדרות. הקש להפעלה.</string>
 </resources>

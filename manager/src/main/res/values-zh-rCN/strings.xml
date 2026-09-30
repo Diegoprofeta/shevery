@@ -299,6 +299,8 @@
     <string name="notification_watchdog_text"><![CDATA[Shevery 服务意外停止。]]></string>
     <string name="watchdog_service_title"><![CDATA[Shevery 看门狗已激活]]></string>
     <string name="watchdog_service_text"><![CDATA[正在监视 Shevery 服务以实现保活恢复]]></string>
+    <string name="watchdog_action_turn_off"><![CDATA[关闭]]></string>
+    <string name="watchdog_action_channel_settings"><![CDATA[关闭提醒]]></string>
     <string name="notification_control_channel_name"><![CDATA[Shevery 控制]]></string>
     <string name="notification_control_title_running"><![CDATA[Shevery 正在运行]]></string>
     <string name="notification_control_title_stopped"><![CDATA[Shevery 已停止]]></string>
@@ -502,7 +504,7 @@
     <string name="diagnostics_limited"><![CDATA[受限]]></string>
     <string name="diagnostics_unknown"><![CDATA[未知]]></string>
     <string name="error_protect_title"><![CDATA[错误保护]]></string>
-    <string name="error_protect_summary"><![CDATA[每 10 秒检查进程健康状态与事务错误。若发现异常自动停止并重启 Shevery]]></string>
+    <string name="error_protect_summary"><![CDATA[响应式监测服务健康状态。若发现异常或崩溃自动重启 Shevery。]]></string>
     <string name="settings_tcp_5555_title"><![CDATA[绑定 TCP 5555]]></string>
     <string name="settings_tcp_5555_summary"><![CDATA[将本地 ADB 服务绑定至 5555 端口，无需无线调试端口变动即可保持连接。]]></string>
     <string name="settings_tcp_5555_button"><![CDATA[绑定至 5555]]></string>
@@ -575,4 +577,153 @@
     <string name="tcp_prompt_dialog_enable"><![CDATA[启用]]></string>
     <string name="tcp_prompt_dialog_later"><![CDATA[现在不行]]></string>
     <string name="tcp_prompt_dialog_do_not_remind"><![CDATA[不要再提醒我]]></string>
+
+    <!-- AI Providers -->
+    <string name="comput_ai_active"><![CDATA[活跃]]></string>
+    <string name="comput_ai_add_provider"><![CDATA[添加提供商]]></string>
+    <string name="comput_ai_base_url_invalid"><![CDATA[Base URL 必须以 http:// 或 https:// 开头]]></string>
+    <string name="comput_ai_base_url_label"><![CDATA[Base URL]]></string>
+    <string name="comput_ai_base_url_placeholder"><![CDATA[https://openrouter.ai/api/v1/]]></string>
+    <string name="comput_ai_chip_active"><![CDATA[AI：%1$s]]></string>
+    <string name="comput_ai_chip_active_model"><![CDATA[AI：%1$s · %2$s]]></string>
+    <string name="comput_ai_configure_provider"><![CDATA[配置提供商]]></string>
+    <string name="comput_ai_default_model"><![CDATA[默认（推荐）]]></string>
+    <string name="comput_ai_delete_confirm_text"><![CDATA[要移除 %1$s 吗？其保存的 API 密钥也将一并删除。]]></string>
+    <string name="comput_ai_delete_confirm_title"><![CDATA[删除提供商？]]></string>
+    <string name="comput_ai_delete_provider"><![CDATA[删除提供商]]></string>
+    <string name="comput_ai_discover_models"><![CDATA[获取模型]]></string>
+    <string name="comput_ai_discovering"><![CDATA[正在获取模型…]]></string>
+    <string name="comput_ai_edit_provider"><![CDATA[编辑提供商]]></string>
+    <string name="comput_ai_empty_body"><![CDATA[添加一个带 API 密钥的提供商，即可在 Comput 控制台中使用 AI。可从预设开始，或输入自定义端点。]]></string>
+    <string name="comput_ai_empty_title"><![CDATA[尚无 AI 提供商]]></string>
+    <string name="comput_ai_error_hint"><![CDATA[请在设置中检查当前提供商和模型。]]></string>
+    <string name="comput_ai_key_missing"><![CDATA[无 API 密钥]]></string>
+    <string name="comput_ai_key_saved"><![CDATA[API 密钥已保存]]></string>
+    <string name="comput_ai_manager_title"><![CDATA[AI 提供商]]></string>
+    <string name="comput_ai_model_label"><![CDATA[模型]]></string>
+    <string name="comput_ai_model_loading"><![CDATA[正在加载模型…]]></string>
+    <string name="comput_ai_model_placeholder"><![CDATA[输入模型名称]]></string>
+    <string name="comput_ai_model_unavailable"><![CDATA[此服务器未提供模型列表，请手动输入模型名称。]]></string>
+    <string name="comput_ai_models_found"><![CDATA[找到 %1$d 个模型。点击“模型”进行选择。]]></string>
+    <string name="comput_ai_models_none"><![CDATA[此端点没有模型列表，请手动输入模型。]]></string>
+    <string name="comput_ai_name_label"><![CDATA[提供商名称]]></string>
+    <string name="comput_ai_name_placeholder"><![CDATA[例如 OpenRouter、Gemini、自定义]]></string>
+    <string name="comput_ai_no_active_toast"><![CDATA[未配置当前 AI 提供商。请在 设置 → Comput 控制台 → AI 提供商 中添加。]]></string>
+    <string name="comput_ai_no_models_match"><![CDATA[没有匹配的模型]]></string>
+    <string name="comput_ai_no_provider_body"><![CDATA[添加提供商及其 API 密钥即可开始生成命令。]]></string>
+    <string name="comput_ai_no_provider_title"><![CDATA[未配置 AI 提供商]]></string>
+    <string name="comput_ai_pick_model"><![CDATA[选择模型]]></string>
+    <string name="comput_ai_preset_custom"><![CDATA[自定义]]></string>
+    <string name="comput_ai_preset_label"><![CDATA[预设]]></string>
+    <string name="comput_ai_provider_not_configured"><![CDATA[未配置]]></string>
+    <string name="comput_ai_provider_title"><![CDATA[AI 提供商]]></string>
+    <string name="comput_ai_search_models"><![CDATA[搜索模型]]></string>
+    <string name="comput_ai_set_active"><![CDATA[将 %1$s 设为当前提供商]]></string>
+    <string name="comput_ai_setup_hint"><![CDATA[未配置 AI 提供商，点击标签进行设置]]></string>
+    <string name="comput_ai_stage_1"><![CDATA[预设]]></string>
+    <string name="comput_ai_stage_2"><![CDATA[凭据]]></string>
+    <string name="comput_ai_stage_3"><![CDATA[模型]]></string>
+    <string name="comput_ai_switch_fail"><![CDATA[无法加载模型，请检查提供商连接。]]></string>
+    <string name="comput_ai_switch_title"><![CDATA[切换 AI 模型]]></string>
+    <string name="comput_ai_test_connection"><![CDATA[测试连接]]></string>
+    <string name="comput_ai_test_fail"><![CDATA[失败：%1$s]]></string>
+    <string name="comput_ai_test_no_key"><![CDATA[测试前请输入 API 密钥。]]></string>
+    <string name="comput_ai_test_ok"><![CDATA[已连接（%1$d 个模型）]]></string>
+    <string name="comput_ai_test_testing"><![CDATA[正在测试…]]></string>
+
+    <!-- Comput / Commandium -->
+    <string name="comput_command_send"><![CDATA[发送]]></string>
+    <string name="comput_commandium_error"><![CDATA[错误]]></string>
+    <string name="comput_commandium_failed"><![CDATA[生成失败]]></string>
+    <string name="comput_commandium_generating"><![CDATA[正在生成命令…]]></string>
+    <string name="comput_commandium_ready"><![CDATA[命令已生成]]></string>
+    <string name="comput_commandium_recent"><![CDATA[最近的提示]]></string>
+
+    <!-- Diagnostics -->
+    <string name="diagnostics_available"><![CDATA[可用]]></string>
+    <string name="diagnostics_device"><![CDATA[设备]]></string>
+    <string name="diagnostics_dhizuku_mode"><![CDATA[Dhizuku 模式]]></string>
+    <string name="diagnostics_disabled"><![CDATA[已禁用]]></string>
+    <string name="diagnostics_enabled"><![CDATA[已启用]]></string>
+    <string name="diagnostics_error_protect"><![CDATA[ErrorProtect]]></string>
+    <string name="diagnostics_launch_mode"><![CDATA[上次启动]]></string>
+    <string name="diagnostics_root"><![CDATA[Root]]></string>
+    <string name="diagnostics_tcp_mode"><![CDATA[TCP 模式]]></string>
+    <string name="diagnostics_unavailable"><![CDATA[不可用]]></string>
+
+    <!-- Lab Features -->
+    <string name="lab_auto_refresh_summary"><![CDATA[每次打开主界面时重新检查服务状态]]></string>
+    <string name="lab_auto_refresh_title"><![CDATA[恢复时刷新状态]]></string>
+    <string name="lab_notify_recovery_summary"><![CDATA[当 ErrorProtect（看门狗）成功重启服务时显示通知]]></string>
+    <string name="lab_notify_recovery_title"><![CDATA[自动恢复时通知]]></string>
+
+    <!-- Module Catalog -->
+    <string name="modules_catalog_empty_retry"><![CDATA[重试]]></string>
+    <string name="modules_catalog_empty_token"><![CDATA[编辑令牌]]></string>
+
+    <!-- Notifications -->
+    <string name="notification_channel_watchdog_death"><![CDATA[看门狗警报]]></string>
+    <string name="notification_recovery_text"><![CDATA[ErrorProtect 已成功重启 Shevery 服务。]]></string>
+    <string name="notification_recovery_title"><![CDATA[Shevery 服务已恢复]]></string>
+
+    <!-- Wi-Fi -->
+    <string name="settings_wifi_reassert_summary"><![CDATA[默认关闭。当系统清除了无线调试标志时将其恢复（在 ADB 启动和 Wi-Fi 重连时）。不会将其关闭。]]></string>
+    <string name="settings_wifi_reassert_title"><![CDATA[重新设置无线调试]]></string>
+
+    <!-- Automation (Tasker / MacroDroid) -->
+    <string name="automation_settings_title"><![CDATA[自动化]]></string>
+    <string name="automation_section_summary"><![CDATA[Tasker、MacroDroid 和广播 Intent]]></string>
+    <string name="automation_tasker_macrodroid_title"><![CDATA[Tasker 与 MacroDroid]]></string>
+    <string name="automation_dialog_description"><![CDATA[通过内置插件或显式广播 Intent 使用 Tasker 或 MacroDroid 控制 Shevery。点击项目以复制。]]></string>
+    <string name="automation_dialog_actions_header"><![CDATA[广播动作]]></string>
+    <string name="automation_dialog_target_header"><![CDATA[目标包名]]></string>
+    <string name="automation_copied_to_clipboard"><![CDATA[已复制到剪贴板]]></string>
+    <string name="automation_package_label"><![CDATA[包名]]></string>
+    <string name="automation_action_start"><![CDATA[启动服务]]></string>
+    <string name="automation_action_stop"><![CDATA[停止服务]]></string>
+    <string name="automation_action_restart"><![CDATA[重启服务]]></string>
+    <string name="automation_action_toggle"><![CDATA[切换服务状态]]></string>
+    <string name="automation_plugin_method_title"><![CDATA[Tasker / Locale 插件]]></string>
+    <string name="automation_plugin_method_summary"><![CDATA[Tasker 和 MacroDroid 中的集成操作与状态条件插件]]></string>
+
+    <!-- Backups, Extras & Classic Nav -->
+    <string name="settings_backups_title"><![CDATA[备份]]></string>
+    <string name="settings_section_backups_summary"><![CDATA[备份与恢复设置]]></string>
+    <string name="settings_extras_title"><![CDATA[附加功能]]></string>
+    <string name="settings_section_extras_summary"><![CDATA[无障碍、诊断与实验性功能]]></string>
+    <string name="settings_classic_nav"><![CDATA[传统底栏导航]]></string>
+    <string name="settings_classic_nav_summary"><![CDATA[使用传统固定底栏替代悬浮胶囊]]></string>
+
+    <!-- Home - Automation -->
+    <string name="home_automation_title">使用自动化应用控制 Shevery</string>
+    <string name="home_automation_description">Tasker 和 MacroDroid 等应用可以发送 Intent 自动启动、停止、重启或切换 Shevery。</string>
+    <string name="home_automation_button_view_intents">查看 Intent</string>
+    <string name="home_automation_bottom_sheet_intents">自动化 Intent</string>
+    <string name="home_automation_bottom_sheet_description">在 Tasker 或 MacroDroid 中配置 Intent，或直接从 Termux / ADB 运行命令。点击任意字段以复制。</string>
+    <string name="home_automation_connectors_disabled_warning">连接器当前已禁用。请在“设置 → 自动化”中启用以允许接收广播 Intent。</string>
+    <string name="home_automation_device_restriction">在较旧的 Android 版本且无 Root 权限下使用启动 Intent，需要先在电脑上运行 %1$s 开启 TCP 调试。</string>
+    <string name="home_automation_label_action">操作</string>
+    <string name="home_automation_label_package">包名</string>
+    <string name="home_automation_label_target">目标组件</string>
+    <string name="home_automation_label_extras">附加参数 (认证令牌)</string>
+    <string name="home_automation_label_shell">Shell / Termux 命令</string>
+    <string name="home_automation_regenerate_token">重新生成令牌</string>
+    <string name="home_automation_regenerate_token_confirm">确定要重新生成令牌吗？所有已配置的 Tasker 或 MacroDroid Intent 都需要更新为新令牌。</string>
+    <string name="automation_security_group_title">身份验证与安全</string>
+    <string name="automation_security_description">直接广播 Intent 需要通过 \'auth\' 参数 (-e auth &lt;token&gt;) 传递此私密认证令牌，以防止未经授权的应用控制 Shevery。</string>
+    <string name="automation_regenerate_token_summary">生成新的私密令牌并使现有令牌失效</string>
+    <string name="automation_target_component_label">接收器组件</string>
+    <string name="home_automation_connectors_disabled_status">连接器已禁用 (Intent 未生效)</string>
+    <string name="home_automation_connectors_active">连接器已激活</string>
+    <string name="home_automation_connectors_active_desc">将正常接收传入的广播 Intent。</string>
+    <string name="home_automation_open_settings">打开自动化设置</string>
+
+    <!-- Automation Alert Notifications -->
+    <string name="notification_channel_automation_alerts">自动化提醒</string>
+    <string name="notification_auth_missing_title">需要身份验证令牌</string>
+    <string name="notification_auth_missing_message">请在 Intent 中添加“auth”额外数据。您可以在“设置 → 自动化”中找到您的令牌。</string>
+    <string name="notification_auth_invalid_title">身份验证令牌无效</string>
+    <string name="notification_auth_invalid_message">请确保 Intent 中的令牌与 Shevery 设置中的令牌一致。</string>
+    <string name="notification_connectors_disabled_title">自动化连接器已禁用</string>
+    <string name="notification_connectors_disabled_message">自动化 Intent 已被拦截，因为 Shevery 连接器在设置中已禁用。点击以启用。</string>
 </resources>

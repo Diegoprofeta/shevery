@@ -280,6 +280,8 @@
     <string name="notification_watchdog_text"><![CDATA[Der Shevery-Dienst wurde unerwartet beendet.]]></string>
     <string name="watchdog_service_title"><![CDATA[Die Shevery-Überwachungsfunktion ist aktiv]]></string>
     <string name="watchdog_service_text"><![CDATA[Überwachung des Shevery-Dienstes zur Wiederherstellung der Keep-Alive-Verbindung]]></string>
+    <string name="watchdog_action_turn_off"><![CDATA[Ausschalten]]></string>
+    <string name="watchdog_action_channel_settings"><![CDATA[Benachrichtigungen deaktivieren]]></string>
     <string name="notification_control_channel_name"><![CDATA[Shevery-Steuerung]]></string>
     <string name="notification_startup_channel_name"><![CDATA[Das Start-up „Shevery“]]></string>
     <string name="notification_startup_title"><![CDATA[Shevery starten]]></string>
@@ -498,7 +500,7 @@ Bereit für Befehle.]]></string>
     <string name="diagnostics_limited"><![CDATA[begrenzt]]></string>
     <string name="diagnostics_unknown"><![CDATA[unbekannt]]></string>
     <string name="error_protect_title"><![CDATA[ErrorProtect]]></string>
-    <string name="error_protect_summary"><![CDATA[Überprüft alle 10 Sekunden den Betriebszustand des Prozesses und transaktionsbezogene Fehler. Stoppt und startet Shevery automatisch neu, wenn Probleme festgestellt werden.]]></string>
+    <string name="error_protect_summary"><![CDATA[Überwacht den Dienststatus reaktiv. Startet Shevery bei Problemen oder Abstürzen automatisch neu.]]></string>
     <string name="settings_tcp_5555_title"><![CDATA[TCP-Port 5555]]></string>
     <string name="settings_tcp_5555_summary"><![CDATA[Binde den lokalen ADB-Server an Port 5555, damit er auch ohne Aktualisierungen des Wireless-Debugging-Ports weiterhin funktioniert.]]></string>
     <string name="settings_tcp_5555_button"><![CDATA[An 5555 binden]]></string>
@@ -558,4 +560,61 @@ wurde in die Zwischenablage kopiert.]]></string>
     <string name="tcp_prompt_dialog_enable"><![CDATA[Aktivieren]]></string>
     <string name="tcp_prompt_dialog_later"><![CDATA[Nicht jetzt]]></string>
     <string name="tcp_prompt_dialog_do_not_remind"><![CDATA[Erinnere mich nicht noch einmal daran]]></string>
+
+    <!-- Automation (Tasker / MacroDroid) -->
+    <string name="automation_settings_title"><![CDATA[Automatisierung]]></string>
+    <string name="automation_section_summary"><![CDATA[Tasker, MacroDroid und Broadcast-Intents]]></string>
+    <string name="automation_tasker_macrodroid_title"><![CDATA[Tasker & MacroDroid]]></string>
+    <string name="automation_dialog_description"><![CDATA[Steuern Sie Shevery mit Tasker oder MacroDroid über das integrierte Plugin oder durch Senden expliziter Broadcast-Intents. Tippen Sie zum Kopieren.]]></string>
+    <string name="automation_dialog_actions_header"><![CDATA[Broadcast-Aktionen]]></string>
+    <string name="automation_dialog_target_header"><![CDATA[Zielpaket]]></string>
+    <string name="automation_copied_to_clipboard"><![CDATA[In die Zwischenablage kopiert]]></string>
+    <string name="automation_package_label"><![CDATA[Paket]]></string>
+    <string name="automation_action_start"><![CDATA[Server starten]]></string>
+    <string name="automation_action_stop"><![CDATA[Server stoppen]]></string>
+    <string name="automation_action_restart"><![CDATA[Server neu starten]]></string>
+    <string name="automation_action_toggle"><![CDATA[Server umschalten]]></string>
+    <string name="automation_plugin_method_title"><![CDATA[Tasker / Locale Plugin]]></string>
+    <string name="automation_plugin_method_summary"><![CDATA[Integriertes Aktions- und Zustandsbedingungs-Plugin in Tasker und MacroDroid]]></string>
+
+    <!-- Backups, Extras & Classic Nav -->
+    <string name="settings_backups_title"><![CDATA[Sicherungen]]></string>
+    <string name="settings_section_backups_summary"><![CDATA[Einstellungen sichern und wiederherstellen]]></string>
+    <string name="settings_extras_title"><![CDATA[Erweitert]]></string>
+    <string name="settings_section_extras_summary"><![CDATA[Barrierefreiheit, Diagnose und Experimente]]></string>
+    <string name="settings_classic_nav"><![CDATA[Klassische Navigationsleiste]]></string>
+    <string name="settings_classic_nav_summary"><![CDATA[Feste Navigationsleiste statt schwebender Pille verwenden]]></string>
+
+    <!-- Home - Automation -->
+    <string name="home_automation_title">Shevery mit Automatisierungs-Apps steuern</string>
+    <string name="home_automation_description">Apps wie Tasker und MacroDroid können Intents senden, um Shevery automatisch zu starten, zu stoppen, neu zu starten oder umzuschalten.</string>
+    <string name="home_automation_button_view_intents">Intents anzeigen</string>
+    <string name="home_automation_bottom_sheet_intents">Automatisierungs-Intents</string>
+    <string name="home_automation_bottom_sheet_description">Konfigurieren Sie Intents in Tasker oder MacroDroid oder führen Sie den Befehl direkt über Termux / ADB aus. Tippen zum Kopieren.</string>
+    <string name="home_automation_connectors_disabled_warning">Connectors sind derzeit deaktiviert. Aktivieren Sie sie unter Einstellungen → Automatisierung, um eingehende Broadcast-Intents zuzulassen.</string>
+    <string name="home_automation_device_restriction">Um den Start-Intent auf älteren Android-Versionen ohne Root zu verwenden, müssen Sie zuerst ADB über TCP aktivieren, indem Sie %1$s von einem PC aus ausführen.</string>
+    <string name="home_automation_label_action">Aktion</string>
+    <string name="home_automation_label_package">Paket</string>
+    <string name="home_automation_label_target">Ziel</string>
+    <string name="home_automation_label_extras">Extras (Authentifizierungs-Token)</string>
+    <string name="home_automation_label_shell">Shell / Termux-Befehl</string>
+    <string name="home_automation_regenerate_token">Token neu generieren</string>
+    <string name="home_automation_regenerate_token_confirm">Sind Sie sicher, dass Sie das Token neu generieren möchten? Alle konfigurierten Intents müssen mit dem neuen Token aktualisiert werden.</string>
+    <string name="automation_security_group_title">Authentifizierung &amp; Sicherheit</string>
+    <string name="automation_security_description">Direkte Broadcast-Intents erfordern dieses geheime Authentifizierungs-Token im \'auth\'-Extra (-e auth &lt;token&gt;). Dies schützt Shevery vor unbefugten Apps.</string>
+    <string name="automation_regenerate_token_summary">Neues Geheimtoken generieren und das vorhandene ungültig machen</string>
+    <string name="automation_target_component_label">Empfänger-Komponente</string>
+    <string name="home_automation_connectors_disabled_status">Connectors deaktiviert (Intents inaktiv)</string>
+    <string name="home_automation_connectors_active">Connectors aktiv</string>
+    <string name="home_automation_connectors_active_desc">Eingehende Broadcast-Intents werden akzeptiert.</string>
+    <string name="home_automation_open_settings">Automatisierungs-Einstellungen öffnen</string>
+
+    <!-- Automation Alert Notifications -->
+    <string name="notification_channel_automation_alerts">Automatisierungs-Warnungen</string>
+    <string name="notification_auth_missing_title">Authentifizierungs-Token erforderlich</string>
+    <string name="notification_auth_missing_message">Fügen Sie das Extra „auth“ zu Ihrem Intent hinzu. Sie finden Ihr Token unter Einstellungen → Automatisierung.</string>
+    <string name="notification_auth_invalid_title">Ungültiges Authentifizierungs-Token</string>
+    <string name="notification_auth_invalid_message">Stellen Sie sicher, dass das Token in Ihrem Intent mit dem in den Shevery-Einstellungen übereinstimmt.</string>
+    <string name="notification_connectors_disabled_title">Automatisierungs-Connectors deaktiviert</string>
+    <string name="notification_connectors_disabled_message">Ein Automatisierungs-Intent wurde blockiert, da die Shevery-Connectors in den Einstellungen deaktiviert sind. Zum Aktivieren tippen.</string>
 </resources>

@@ -298,6 +298,8 @@
     <string name="notification_watchdog_text"><![CDATA[Η υπηρεσία Shevery σταμάτησε να λειτουργεί απροσδόκητα.]]></string>
     <string name="watchdog_service_title"><![CDATA[Το Shevery Watchdog είναι ενεργό]]></string>
     <string name="watchdog_service_text"><![CDATA[Παρακολούθηση της υπηρεσίας Shevery για ανάκτηση μέσω keep-alive]]></string>
+    <string name="watchdog_action_turn_off"><![CDATA[Απενεργοποίηση]]></string>
+    <string name="watchdog_action_channel_settings"><![CDATA[Απενεργοποίηση ειδοποιήσεων]]></string>
     <string name="notification_control_channel_name">Έλεγχος Shevery</string>
     <string name="notification_startup_channel_name"><![CDATA[Shevery: μια νεοφυής επιχείρηση]]></string>
     <string name="notification_startup_title"><![CDATA[Έναρξη του Shevery]]></string>
@@ -516,7 +518,7 @@
     <string name="diagnostics_limited"><![CDATA[περιορισμένη]]></string>
     <string name="diagnostics_unknown"><![CDATA[άγνωστο]]></string>
     <string name="error_protect_title"><![CDATA[ErrorProtect]]></string>
-    <string name="error_protect_summary"><![CDATA[Ελέγχει την κατάσταση λειτουργίας της διαδικασίας και τα σφάλματα συναλλαγών κάθε 10 δευτερόλεπτα. Σταματά και επανεκκινεί αυτόματα το Shevery σε περίπτωση που εντοπιστούν προβλήματα.]]></string>
+    <string name="error_protect_summary"><![CDATA[Αντιδραστική παρακολούθηση της κατάστασης της υπηρεσίας. Επανεκκινεί αυτόματα το Shevery εάν εντοπιστούν προβλήματα ή καταρρεύσεις.]]></string>
     <string name="settings_tcp_5555_title"><![CDATA[Σύνδεση TCP 5555]]></string>
     <string name="settings_tcp_5555_summary"><![CDATA[Συνδέστε τον τοπικό διακομιστή ADB στη θύρα 5555, ώστε να συνεχίσει να λειτουργεί χωρίς να απαιτούνται ενημερώσεις της θύρας ασύρματου εντοπισμού σφαλμάτων.]]></string>
     <string name="settings_tcp_5555_button"><![CDATA[Σύνδεση με το 5555]]></string>
@@ -558,4 +560,61 @@
     <string name="tcp_prompt_dialog_enable"><![CDATA[Καθιστώ ικανό]]></string>
     <string name="tcp_prompt_dialog_later"><![CDATA[Όχι τώρα]]></string>
     <string name="tcp_prompt_dialog_do_not_remind"><![CDATA[Μη μου το ξαναθυμίσεις]]></string>
+
+    <!-- Automation (Tasker / MacroDroid) -->
+    <string name="automation_settings_title"><![CDATA[Αυτοματισμός]]></string>
+    <string name="automation_section_summary"><![CDATA[Tasker, MacroDroid και intents μετάδοσης]]></string>
+    <string name="automation_tasker_macrodroid_title"><![CDATA[Tasker & MacroDroid]]></string>
+    <string name="automation_dialog_description"><![CDATA[Ελέγξτε το Shevery με το Tasker ή το MacroDroid μέσω του ενσωματωμένου προσθέτου ή στέλνοντας intents μετάδοσης. Πατήστε για αντιγραφή.]]></string>
+    <string name="automation_dialog_actions_header"><![CDATA[Ενέργειες μετάδοσης]]></string>
+    <string name="automation_dialog_target_header"><![CDATA[Πακέτο προορισμού]]></string>
+    <string name="automation_copied_to_clipboard"><![CDATA[Αντιγράφηκε στο πρόχειρο]]></string>
+    <string name="automation_package_label"><![CDATA[Πακέτο]]></string>
+    <string name="automation_action_start"><![CDATA[Εκκίνηση διακομιστή]]></string>
+    <string name="automation_action_stop"><![CDATA[Διακοπή διακομιστή]]></string>
+    <string name="automation_action_restart"><![CDATA[Επανεκκίνηση διακομιστή]]></string>
+    <string name="automation_action_toggle"><![CDATA[Εναλλαγή διακομιστή]]></string>
+    <string name="automation_plugin_method_title"><![CDATA[Πρόσθετο Tasker / Locale]]></string>
+    <string name="automation_plugin_method_summary"><![CDATA[Ενσωματωμένο πρόσθετο ενεργειών και συνθηκών κατάστασης σε Tasker και MacroDroid]]></string>
+
+    <!-- Backups, Extras & Classic Nav -->
+    <string name="settings_backups_title"><![CDATA[Backups]]></string>
+    <string name="settings_section_backups_summary"><![CDATA[Backup and restore settings]]></string>
+    <string name="settings_extras_title"><![CDATA[Extras]]></string>
+    <string name="settings_section_extras_summary"><![CDATA[Accessibility, diagnostics, and experiments]]></string>
+    <string name="settings_classic_nav"><![CDATA[Classic navigation bar]]></string>
+    <string name="settings_classic_nav_summary"><![CDATA[Use a fixed bottom bar instead of the floating pill]]></string>
+
+    <!-- Home - Automation -->
+    <string name="home_automation_title">Έλεγχος του Shevery με εφαρμογές αυτοματισμού</string>
+    <string name="home_automation_description">Εφαρμογές όπως το Tasker και το MacroDroid μπορούν να στείλουν intents για αυτόματη εκκίνηση, διακοπή, επανεκκίνηση ή εναλλαγή του Shevery.</string>
+    <string name="home_automation_button_view_intents">Προβολή intents</string>
+    <string name="home_automation_bottom_sheet_intents">Intents αυτοματισμού</string>
+    <string name="home_automation_bottom_sheet_description">Ρυθμίστε intents στο Tasker ή το MacroDroid ή εκτελέστε την εντολή απευθείας από το Termux / ADB. Πατήστε για αντιγραφή.</string>
+    <string name="home_automation_connectors_disabled_warning">Οι σύνδεσμοι είναι απενεργοποιημένοι. Ενεργοποιήστε τους στις Ρυθμίσεις → Αυτοματισμός για να επιτρέπονται εισερχόμενα intents.</string>
+    <string name="home_automation_device_restriction">Για να χρησιμοποιήσετε το intent εκκίνησης σε παλαιότερες εκδόσεις Android χωρίς root, πρέπει πρώτα να ενεργοποιήσετε το ADB μέσω TCP εκτελώντας %1$s από υπολογιστή.</string>
+    <string name="home_automation_label_action">Ενέργεια</string>
+    <string name="home_automation_label_package">Πακέτο</string>
+    <string name="home_automation_label_target">Στόχος</string>
+    <string name="home_automation_label_extras">Πρόσθετα (Διακριτικό ελέγχου ταυτότητας)</string>
+    <string name="home_automation_label_shell">Εντολή Shell / Termux</string>
+    <string name="home_automation_regenerate_token">Αναγέννηση διακριτικού</string>
+    <string name="home_automation_regenerate_token_confirm">Είστε βέβαιοι ότι θέλετε να αναγεννήσετε το διακριτικό; Τυχόν διαμορφωμένα intents θα πρέπει να ενημερωθούν με το νέο διακριτικό.</string>
+    <string name="automation_security_group_title">Έλεγχος ταυτότητας και ασφάλεια</string>
+    <string name="automation_security_description">Τα άμεσα intents μετάδοσης απαιτούν αυτό το μυστικό διακριτικό ως πρόσθετο \'auth\' (-e auth &lt;token&gt;). Αυτό προστατεύει το Shevery από μη εξουσιοδοτημένες εφαρμογές.</string>
+    <string name="automation_regenerate_token_summary">Δημιουργία νέου μυστικού διακριτικού και ακύρωση του υπάρχοντος</string>
+    <string name="automation_target_component_label">Στοιχείο δέκτη</string>
+    <string name="home_automation_connectors_disabled_status">Σύνδεσμοι απενεργοποιημένοι (Ανενεργά intents)</string>
+    <string name="home_automation_connectors_active">Σύνδεσμοι ενεργοί</string>
+    <string name="home_automation_connectors_active_desc">Τα εισερχόμενα intents μετάδοσης θα γίνονται δεκτά.</string>
+    <string name="home_automation_open_settings">Άνοιγμα ρυθμίσεων αυτοματισμού</string>
+
+    <!-- Automation Alert Notifications -->
+    <string name="notification_channel_automation_alerts">Ειδοποιήσεις αυτοματισμού</string>
+    <string name="notification_auth_missing_title">Απαιτείται διακριτικό ελέγχου ταυτότητας</string>
+    <string name="notification_auth_missing_message">Προσθέστε το extra “auth” στο intent σας. Μπορείτε να βρείτε το διακριτικό σας στις Ρυθμίσεις → Αυτοματισμός.</string>
+    <string name="notification_auth_invalid_title">Μη έγκυρο διακριτικό ελέγχου ταυτότητας</string>
+    <string name="notification_auth_invalid_message">Βεβαιωθείτε ότι το διακριτικό στο intent ταιριάζει με αυτό στις Ρυθμίσεις του Shevery.</string>
+    <string name="notification_connectors_disabled_title">Σύνδεσμοι αυτοματισμού απενεργοποιημένοι</string>
+    <string name="notification_connectors_disabled_message">Ένα intent αυτοματισμού αποκλείστηκε επειδή οι σύνδεσμοι του Shevery είναι απενεργοποιημένοι στις Ρυθμίσεις. Πατήστε για ενεργοποίηση.</string>
 </resources>
